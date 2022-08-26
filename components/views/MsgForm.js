@@ -42,7 +42,6 @@ export default function MsgForm({ messager, className, setNewMessage }) {
                         onChange={(e) => {
                             const value = e.target.value;
                             if (value.length > 200) setLongMessage(true);
-                            if (value.length > 200) console.log('its alrwady 200');
                             if (longMessage && value.length < 30)
                             setLongMessage(false);
                             setMessage(value);
@@ -82,9 +81,8 @@ export default function MsgForm({ messager, className, setNewMessage }) {
                             <button
                                 onClick={() => push(GOOGLE_SIGN_IN)} 
                                 type="button" 
-                                className="g-btn absolute  bottom-[11px] right-3"
-                            >
-                                Google
+                                className="px-4 py-[6px] font-semibold text-white bg-slate-500 dark:bg-slate-700 rounded-md absolute bottom-3 right-3"
+                            > Sign In
                             </button>
                         )
                     }
