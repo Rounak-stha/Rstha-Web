@@ -81,7 +81,7 @@ export default function MsgForm({ messager, className, setNewMessage }) {
                             <button
                                 onClick={() => push(GOOGLE_SIGN_IN)} 
                                 type="button" 
-                                className="px-4 py-[6px] font-semibold text-white bg-slate-500 dark:bg-slate-700 rounded-md absolute bottom-3 right-3"
+                                className="px-4 py-[6px] font-semibold text-white bg-slate-500 dark:bg-slate-700 rounded-md absolute bottom-[14px] right-3"
                             > Sign In
                             </button>
                         )

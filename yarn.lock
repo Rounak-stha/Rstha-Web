@@ -3355,6 +3355,13 @@
   "resolved" "https://registry.npmjs.org/regexpp/-/regexpp-3.2.0.tgz"
   "version" "3.2.0"
 
+"rehype-code-titles@^1.1.0":
+  "integrity" "sha512-muit6KQWNafowXA0HTUeQtUT+UuP0ra34xty1tuF8WsdjcSm++HswgRAFGXH8CAGe8axuGUxg13+I4yFHFnmfQ=="
+  "resolved" "https://registry.npmjs.org/rehype-code-titles/-/rehype-code-titles-1.1.0.tgz"
+  "version" "1.1.0"
+  dependencies:
+    "unist-util-visit" "~4.1.0"
+
 "rehype-katex@^6.0.2":
   "integrity" "sha512-C4gDAlS1+l0hJqctyiU64f9CvT00S03qV1T6HiMzbSuLBgWUtcqydWHY9OpKrm0SpkK16FNd62CDKyWLwV2ppg=="
   "resolved" "https://registry.npmjs.org/rehype-katex/-/rehype-katex-6.0.2.tgz"
@@ -3953,7 +3960,7 @@
     "@types/unist" "^2.0.0"
     "unist-util-is" "^5.0.0"
 
-"unist-util-visit@^4.0.0":
+"unist-util-visit@^4.0.0", "unist-util-visit@~4.1.0":
   "integrity" "sha512-n7lyhFKJfVZ9MnKtqbsqkQEk5P1KShj0+//V7mAcoI6bpbUjh3C/OG8HVD+pBihfh6Ovl01m8dkcv9HNqYajmQ=="
   "resolved" "https://registry.npmjs.org/unist-util-visit/-/unist-util-visit-4.1.0.tgz"
   "version" "4.1.0"
