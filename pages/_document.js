@@ -5,6 +5,8 @@ export default function Document() {
     <Html>
       <Head>
         <link rel='icon' type='image/x-icon' href='/favicon.png' />
+        <meta name='description' content="Welcome to Rounak Shrestha's website. Visit to know more about him and read awesome blogs." />
+        <meta name="keywords" content="Rounak Shrestha, Rstha, Rounak Stha, Blog" />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
           rel='preconnect'

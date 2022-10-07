@@ -37,7 +37,7 @@ export async function getStaticProps({ params, preview = true }) {
         title,
         created,
         data,
-        "readingTime": round(length(data) / 7 / 200)
+        "readingTime": round(length(data) / 7 / 365)
     }
     `,
     { slug }

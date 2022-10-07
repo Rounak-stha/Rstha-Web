@@ -5,8 +5,6 @@ import Link from 'next/link';
 import BlogPreview from '@/components/views/BlogPreview';
 import Head from 'next/head';
 
-let a = { a: 1 };
-
 function BlogCard({ blog }) {
   const { title, slug, excerpt, created, readingTime } = blog;
   return (

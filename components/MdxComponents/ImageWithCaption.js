@@ -1,5 +1,5 @@
 import React from 'react';
-import Caption from './Caption';
+
 export default function ImageWithCaption({ image }) {
   const { src, caption, width } = image;
   return (
