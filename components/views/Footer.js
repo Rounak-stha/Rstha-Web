@@ -8,7 +8,7 @@ const footerItems = navItems
 
 export default function Footer() {
   return (
-    <div className='mb-2'>
+    <div className='mb-2 mono'>
       <div className='flex flex-col xs:h-36 flex-wrap w-full mx-auto text-gray-600 dark:text-gray-400'>
         {footerItems.map(({ name, href }) => (
           <Link key={name} href={href}>

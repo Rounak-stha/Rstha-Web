@@ -21,7 +21,7 @@ export default function MsgForm({ messager, className, setNewMessage }) {
         <div
             className={`${
                 className ? className : ''
-            } border-[1px] border-[#BDE7FF] dark:border-[#232833] bg-[#E9EEFF] dark:bg-[#1a1d23] rounded-lg p-5 w-full`}
+            } border-[1px] border-bdr-light dark:border-bdr-dark bg-[#E9EEFF] dark:bg-[#1a1d23] rounded-lg p-5 w-full`}
         >
             <div className='leading-[1.4rem] font-semibold flex items-center'>
                 <p className='mr-2 mb-[2px] text-[1.2rem]'>Write to me</p>

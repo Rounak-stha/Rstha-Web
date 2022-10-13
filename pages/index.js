@@ -15,7 +15,7 @@ export default function Home({ recentBlogs }) {
       <main>
         <Profile />
         <div className='mt-8'>
-          <p className='text-3xl font-semibold my-4'>Recent Blogs</p>
+          <p className='text-3xl font-semibold mt-4 mb-2'>Recent Blogs</p>
           {recentBlogs.map((blog, i) => {
             return (
               <div key={i}>

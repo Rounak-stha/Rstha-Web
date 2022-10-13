@@ -23,7 +23,11 @@ module.exports = {
       'phold-dark': '#989898',
       'callout-light': '#EBEDF0',
       'callout-dark': '#1d2433',
-      'callout-dark-bdr': '#212b41'
+      'callout-dark-bdr': '#212b41',
+
+      // border
+      'bdr-light': '#C5C5C5',
+      'bdr-dark': '#232833'
     },
     extend: {
       screens: {
