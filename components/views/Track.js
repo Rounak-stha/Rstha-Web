@@ -3,6 +3,7 @@ import { RiMusic2Fill } from 'react-icons/ri';
 import { motion } from 'framer-motion';
 
 import PlayingAnimation from './PlayingAnimation';
+import { P2, P3, P4 } from '../Typography/ParaGraph';
 
 export default function Track({ track }) {
   const [playing, setPlaying] = useState(false);
@@ -55,8 +56,8 @@ export default function Track({ track }) {
         )}
       </div>
       <div className='my-1' key={name} onMouseEnter={() => {}}>
-        <p className='font-semibold leading-[1em] mb-[2px]'>{name}</p>
-        <p className='text-gray-600 dark:text-gray-400 text-sm'>{artist}</p>
+        <P2 className='font-semibold leading-[1em]'>{name}</P2>
+        <P3 className='text-gray-600 dark:text-gray-400'>{artist}</P3>
         {spotifyId && (
           <audio className='hidden' controls id={spotifyId} src={previewUrl} />
         )}

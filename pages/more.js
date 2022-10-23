@@ -9,6 +9,8 @@ import TweetSkeleton from '@/components/views/TweetSkeleton';
 import useSWR from 'swr';
 import { handleNetworkRequestError } from '@/lib/error';
 import { swrFetcher, swrOptions } from '@/lib/swr';
+import { P1 } from '@/components/Typography/ParaGraph';
+import { H3, H4 } from '@/components/Typography/Headings';
 
 export default function More({ t3Tracks }) {
   const [tracks, setTracks] = useState(t3Tracks);
@@ -54,21 +56,21 @@ export default function More({ t3Tracks }) {
   return (
     <>
       <Head>
-        <title>Rstha | Three</title>
+        <title>Rstha | More</title>
       </Head>
-      <p className='mb-6 text-lg'>
+      <P1 className='mb-6 text-lg'>
         Playing with Spotify and Twitter API
-      </p>
+      </P1>
       <div className='my-4'>
-        <div className='font-semibold text-2xl mb-1 flex flex-wrap'>
-          <p className='mr-2'>Music</p>
+        <div className='flex items-center flex-wrap'>
+          <H3 className='mr-2 my-0'>Music</H3>
           <CurrentlyPlaying song={currentlyPlaying} />
         </div>
-        <div className='font-bold text-xl mb-1'>Tracks on Repeat</div>
+        <H4 className='my-1'>Tracks on Repeat</H4>
         {tracks.map((track) => {
           return <Track key={track.spotifyId} track={track} />;
         })}
-        { !tweetsError && <p className='font-semibold text-2xl mt-4'>Recently Liked Tweets</p> }
+        { !tweetsError && <H3 className='font-semibold text-2xl mt-4'>Recently Liked Tweets</H3> }
         <div className=''>
           {
             tweets ? 

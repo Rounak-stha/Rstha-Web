@@ -5,7 +5,10 @@ import Nav from './Nav';
 export default function Layout({ children }) {
     useEffect(() => {
         const theme = localStorage.getItem('theme');
-        if (theme === 'dark') document.documentElement.classList.add(theme);
+        if (theme === 'light') {
+            document.documentElement.classList.remove('dark')
+            document.documentElement.classList.add('light')
+        }
     }, []);
     return (
         <>

@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
-    <Html>
+    <Html className='dark'>
       <Head>
         <link rel='icon' type='image/x-icon' href='/favicon.png' />
         <meta name='description' content="Welcome to Rounak Shrestha's website. Visit to know more about him and read awesome blogs." />
@@ -24,7 +24,7 @@ export default function Document() {
           crossOrigin='anonymous'
         />
       </Head>
-      <body className='dark:bg-back-dark dark:text-gray-200 text-[1.07rem]'>
+      <body className='dark:bg-back-dark bg-back-light text-dark dark:text-light text-[1.07rem]'>
         <Main />
         <NextScript />
       </body>

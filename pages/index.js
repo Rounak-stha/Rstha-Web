@@ -4,10 +4,11 @@ import MsgForm from '@/components/views/MsgForm';
 import { recentPosts } from '@/lib/queries';
 import { getClient } from '@/lib/sanity-server';
 import BlogPreview from '@/components/views/BlogPreview';
+import { H2 } from '@/components/Typography/Headings';
 
 export default function Home({ recentBlogs }) {
   return (
-    <div className='mt-4'>
+    <div>
       <Head>
         <title>Rstha | Welcome</title>
       </Head>
@@ -15,10 +16,10 @@ export default function Home({ recentBlogs }) {
       <main>
         <Profile />
         <div className='mt-8'>
-          <p className='text-3xl font-semibold mt-4 mb-2'>Recent Blogs</p>
+          <H2 className='mb-6'>Recent Blogs</H2>
           {recentBlogs.map((blog, i) => {
             return (
-              <div key={i}>
+              <div className='mb-6' key={i}>
                 <BlogPreview preViewData={blog} />
               </div>
             );

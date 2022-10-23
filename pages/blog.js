@@ -3,6 +3,8 @@ import { allPosts } from '@/lib/queries';
 import { getClient } from '@/lib/sanity-server';
 import BlogPreview from '@/components/views/BlogPreview';
 import Head from 'next/head';
+import Input from '@/components/AtomsAndMolecules/Input';
+import { H2 } from '@/components/Typography/Headings';
 
 export default function Blog({ blogs }) {
   const [searchText, setSearchText] = useState('');
@@ -13,20 +15,19 @@ export default function Blog({ blogs }) {
         <title>Rstha | Blog</title>
       </Head>
       <div>
-        <input
+        <Input
           type='text'
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
           placeholder='Search'
-          className='bg-input-light dark:bg-input-dark w-full rounded-lg px-4 py-2 mb-4 border-2 border-gray-200 dark:border-none   focus:border-none focus:outline outline-2 outline-purp-light dark:outline-purp-bdr-dark'
         />
-        <p className='text-3xl font-bold mt-4 mb-2'>
+        <H2 className='text-3xl mt-8 mb-6'>
           {searchText ? 'Searched Blogs' : 'All Blogs'}
-        </p>
+        </H2>
         {!searchText
           ? blogs.map((blog, i) => {
               return (
-                <div key={i}>
+                <div key={i} className='mb-6'>
                   <BlogPreview preViewData={blog} />
                 </div>
               );

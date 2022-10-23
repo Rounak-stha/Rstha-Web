@@ -1,7 +1,7 @@
 import Blog from '@/components/views/Blog';
 import { parseMdx } from '@/lib/mdx';
 import { getClient } from '@/lib/sanity-server';
-import { allSlugs, postWithData } from '@/lib/queries';
+import { allSlugs } from '@/lib/queries';
 import { groq } from 'next-sanity';
 import Head from 'next/head';
 

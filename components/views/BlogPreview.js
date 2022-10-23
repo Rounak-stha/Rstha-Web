@@ -1,22 +1,34 @@
 import Link from 'next/link';
+import { H4 } from '../Typography/Headings';
+import { P2, P3 } from '../Typography/ParaGraph';
+import Container from './Container';
+
+const glowColors = [
+    'from-cyan-500 to-blue-500', 'from-indigo-500 via-purple-500 to-pink-500', 'from-green-400 to-blue-500',
+    'from-[#12c2e9] via-[#c471ed] to-[#f64f59]', 'from-[#0cebeb] via-[#20e3b2] to-[#f64f59]' , 'from-[#00B4DB] to-[#0083B0]'
+]
+
+const getRandomGlowColorClass = () => glowColors[Math.floor(glowColors.length * Math.random())]
+
 
 export default function BlogPreview({ preViewData }) {
   const { title, slug, excerpt, created, readingTime } = preViewData;
+  const glowColorClass = getRandomGlowColorClass()
+
   return (
-    <div className='group'>
-      <div className='h-4 mb-2 border-2 border-b-0 border-transparent group-hover:border-bdr-light rounded-md rounded-b-none dark:group-hover:border-bdr-dark'></div>
-      <div className='hover:scale-95 transition ease-in-out'>
-        <Link href={`/blog/${slug.current}`}>
-          <a>
-            <p className='text-xl font-semibold mb-1'>{title}</p>
-            <p className='text-sm text-gray-600 mb-1'>
-              {created} . {readingTime} min read
-            </p>
-            <p className='text-gray-900 dark:text-gray-400'>{excerpt}</p>
-          </a>
-        </Link>
+      <div className='hover:scale-105 transition-transform duration-[350ms] ease-in-out cont'>
+        <Container outlined glowClass={glowColorClass}>
+          <Link href={`/blog/${slug.current}`}>
+              <a>
+                <H4 className={`bg-gradient-to-r ${glowColorClass} !text-transparent bg-clip-text mt-0 mb-1`}>{title}</H4>
+                <P3 className='mb-1'>
+                  {created} . {readingTime} min read
+                </P3>
+                <P2>{excerpt}</P2>
+              </a>
+            </Link>
+        </Container>
       </div>
-      <div className='h-4 mt-2 border-2 border-t-0 border-transparent group-hover:border-bdr-light rounded-md rounded-t-none dark:group-hover:border-bdr-dark '></div>
-    </div>
+
   );
 }

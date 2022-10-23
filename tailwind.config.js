@@ -1,41 +1,80 @@
 /** @type {import('tailwindcss').Config} */
 
 const colors = require('tailwindcss/colors');
+const { gray, blue, green, yellow, red} = require('./constants/customColors')
+
 module.exports = {
   content: ['./pages/**/*.{js, jsx}', './components/**/*.{js, jsx}'],
   darkMode: 'class',
   theme: {
     colors: {
       ...colors,
+      gray: {
+        ...colors.gray,
+        ...gray
+      },
+
+      blue: {
+        ...colors.blue,
+        ...blue
+      },
+
+      yellow: {
+        ...colors.yellow,
+        ...yellow
+      },
+
+      green: {
+        ...colors.green,
+        ...green
+      },
+
+      red: {
+        ...colors.red,
+        ...red
+      },
+
       'bg-light': '#DCDCDC',
       'text-light': '#888888',
+      
       // bg
-      'back-dark': '#16181d', // '#080110'
+      'back-dark': gray[13], // '#080110'
+      'back-light': '#fff',
+      
       // forms
-      'purp-text': '#A357FF',
-      'purp-light': '#F3E9FF',
-      'purp-dark': '#0F061A',
-      'purp-bdr-light': '#CFA7FF',
-      'purp-bdr-dark': '#594A6E',
-      'input-light': '#ffffff',
-      'input-dark': '#232833',
-      'phold-light': '#BAB7BB',
-      'phold-dark': '#989898',
-      'callout-light': '#EBEDF0',
-      'callout-dark': '#1d2433',
-      'callout-dark-bdr': '#212b41',
+      'input-light': colors.gray[100],
+      'input-dark': gray['14'],
+      'input-light-outline': gray[2],
+      'input-dark-outline': gray[10],
+
+      // text color
+      'light': colors.gray['400'],
+      'lighter': colors.gray['200'],
+
+      'dark': colors.gray[600],
+      'darker': '#000',
 
       // border
-      'bdr-light': '#C5C5C5',
-      'bdr-dark': '#232833'
+      'bdr-light': gray[0],
+      'bdr-dark': gray[10]
     },
     extend: {
       screens: {
         xs: '450px'
       },
+      boxShadow: {
+        'around-sm': '0px 0px 5px 3px rgba(0, 0, 0, 0.1), 0px 0px 4px 1px rgba(0, 0, 0, 0.1)',
+        'around-md': '0px 0px 8px 6px rgba(0, 0, 0, 0.1), 0px 0px 4px 1px rgba(0, 0, 0, 0.1)',
+        'around-lg': '0px 0px 11px 8px rgba(0, 0, 0, 0.1), 0px 0px 4px 1px rgba(0, 0, 0, 0.1)',
+},
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            '--tw-prose-body': theme('colors.gray[600]'),
+            '--tw-prose-headings': '#000',
+            '--tw-prose-invert-body': theme('colors.gray[400]'),
+            '--tw-prose-invert-headings': theme('colors.gray[200]'),
+            
             a: {
               color: '#62a5f7',
               textDecoration: 'none',
@@ -54,13 +93,7 @@ module.exports = {
               color: theme('colors.gray-500')
             },
             blockquote: {
-              'border-left-color': theme('colors.zinc.400'),
-              '&:before': {
-                content: 'hh'
-              },
-              '&:after': {
-                content: 'hh'
-              }
+              'border-left-color': theme('colors.zinc.400')
             }
           }
         }
@@ -79,3 +112,5 @@ module.exports = {
   },
   plugins: [require('@tailwindcss/typography')]
 };
+
+

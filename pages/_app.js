@@ -1,7 +1,7 @@
 import splitbee from '@splitbee/web';
 import { Toaster } from 'react-hot-toast';
 import Layout from '@/components/views/Layout';
-import '../styles/globals.css';
+import '../styles/global.css';
 import { useEffect } from 'react';
 
 function MyApp({ Component, pageProps }) {

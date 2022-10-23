@@ -5,6 +5,7 @@ import useSWR from 'swr';
 import { swrFetcher, swrOptions } from '@/lib/swr';
 import { handleNetworkRequestError } from '@/lib/error';
 import { parse } from 'cookie';
+import { P2, P3 } from '@/components/Typography/ParaGraph';
 
 const N_COOKIE_NAME = process.env.NEXT_PUBLIC_N_COOKIE_NAME
 
@@ -34,11 +35,11 @@ export default function Message() {
         <MsgForm messager={messager} setNewMessage={setNewMessage} />
         {messages && messages.map(({ name, message, date }, i) => (
           <div key={name + i} className='my-5'>
-            <p className='mb-1'>{message}</p>
-            <p className='text-sm text-gray-600 dark:text-gray-400 font-semibold'>
+            <P2 className='mb-1'>{message}</P2>
+            <P3 className='font-semibold'>
               {name ? name : '______'}
               <span className='inline-block ml-3'>{date}</span>
-            </p>
+            </P3>
           </div>
         ))} 
         { isValidating && (

@@ -7,6 +7,8 @@ import MsgForm from './MsgForm';
 import Callout from '../MdxComponents/Callout';
 import Math from '../MdxComponents/Math';
 import Caption from '../MdxComponents/Caption';
+import { H1, H2 } from '../Typography/Headings';
+import { P3 } from '../Typography/ParaGraph';
 
 // https://mdxjs.com/
 
@@ -32,10 +34,10 @@ export default function Blog({ blogData }) {
         />
       </Head>
       <article>
-        <h1 className='text-xl sm:text-3xl mb-2'>{title}</h1>
-        <p className='text-sm mt-0 mb-4'>
+        <H1 className='text-xl sm:text-4xl font-[800] mt-0 mb-2'>{title}</H1>
+        <P3 className='mt-0 mb-4'>
           {created} . {readingTime} min read
-        </p>
+        </P3>
         <MDXRemote {...data} components={components} />
         <MsgForm className='not-prose' />
       </article>

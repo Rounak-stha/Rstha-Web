@@ -15,9 +15,8 @@ export default function Nav() {
             <a
               className={`${
                 href === currPath
-                  ? 'text-black dark:text-sky-50'
-                  : 'text-gray-500 dark:text-gray-400'
-              } mr-2 font-semibold cursor-pointer inline-block p-1 sm:px-4 sm:py-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-zinc-800 transition-all`}
+                  && 'text-darker dark:text-lighter'
+              } mr-2 font-semibold cursor-pointer inline-block p-1 sm:px-4 sm:py-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-12 transition-colors`}
             >
               {name}
             </a>
