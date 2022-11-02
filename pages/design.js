@@ -4,6 +4,7 @@ import Input from "@/components/AtomsAndMolecules/Input";
 import SendIconButton from "@/components/AtomsAndMolecules/SendIconButton";
 import TextArea from "@/components/AtomsAndMolecules/TextArea";
 import Callout from "@/components/MdxComponents/Callout";
+import ImageFlexBox from "@/components/MdxComponents/ImageFlexBox";
 import { H1, H2, H3, H4 } from "@/components/Typography/Headings";
 import { P1, P2, P3, P4 } from "@/components/Typography/ParaGraph";
 import ColorPallete from "@/components/views/ColorPallete";
@@ -15,7 +16,13 @@ export default function Design() {
     return (
         <>
             <H1>Rstha-Web Design System</H1>
-            <hr />
+            <hr className="mb-8" />
+            <ImageFlexBox images={
+                [{
+                    src: 'https://cdn.sanity.io/images/vsfc0kgw/production/4c3c31e6ff7b6aec8dc469c50efc40dce2e3dc2f-5157x3438.jpg?width=700',
+                    caption: 'Source: https://www.freepik.com/free-vector/designers-are-working-desing-web-page-web-design-user-interface-user-experience-content-organization_13450330.htm'
+                }]
+            } />
 
             <div className="mt-8 mb-14">
                 <H2 id='typography' className='mb-8'>TypoGraphy</H2>

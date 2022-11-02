@@ -11,7 +11,7 @@ export default function ImageWithCaption({ image }) {
         style={{ width }}
       />
       <figcaption align='center'>
-        <span className='italic'>{caption}</span>
+        <span className='italic text-sm'>{caption}</span>
       </figcaption>
     </figure>
   );
