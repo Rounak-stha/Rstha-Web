@@ -166,40 +166,45 @@ export default function Design() {
             <div className="mb-14">
                 <H2 id='inputs'>Buttons</H2>
                 <div className="mb-6">
-                    <H4 className='listItem'>Small Button</H4>
-                    <Button>Button</Button>
+                    <H4 className='listItem'>Normal Buttons</H4>
+                    <div className="flex items-center gap-3 flex-wrap">
+                        <Button>Button</Button>
+                        <Button size='md'>Button</Button>
+                        <Button size='lg'>Button</Button>
+                    </div>
                 </div>
-                <div className="mb-6">
-                    <H4 className='listItem'>Medium Button</H4>
-                    <Button size='md'>Button</Button>
-                </div>
-                <div className="mb-6">
-                    <H4 className='listItem'>Big Button</H4>
-                    <Button size='lg'>Button</Button>
-                </div>
+
                 <div className="mb-6">
                     <H4 className='listItem'>Outlined Button</H4>
-                    <Button size='sm' outlined>Button</Button>
+                    <div className="flex items-center gap-3 flex-wrap">
+                        <Button outlined>Button</Button>
+                        <Button size='md' outlined>Button</Button>
+                        <Button size='lg' outlined>Button</Button>
+                    </div>
                 </div>
                 <div className="mb-6">
                     <H4 className='listItem'>Disabled Button</H4>
-                    <Button size='sm' disabled>Button</Button>
+                    <div className="flex items-center gap-3 flex-wrap">
+                        <Button disabled>Button</Button>
+                        <Button size='md' disabled>Button</Button>
+                        <Button size='lg' disabled>Button</Button>
+                    </div>
                 </div>
                 <div className="mb-6">
-                    <H4 className='listItem'>Small Send Icon Button</H4>
-                    <SendIconButton />
-                </div>
-                <div className="mb-6">
-                    <H4 className='listItem'>Medium Send Icon Button</H4>
-                    <SendIconButton size='md' />
-                </div>
-                <div className="mb-6">
-                    <H4 className='listItem'>Large Send Icon Button</H4>
-                    <SendIconButton size='lg' />
+                    <H4 className='listItem'>Send Icon Buttons</H4>
+                    <div className="flex items-center gap-3 flex-wrap">
+                        <SendIconButton />
+                        <SendIconButton size='md' />
+                        <SendIconButton size='lg' />
+                    </div>
                 </div>
                 <div className="mb-6">
                     <H4 className='listItem'>Loading Icon Button</H4>
-                    <SendIconButton loading />
+                    <div className="flex items-center gap-3 flex-wrap">
+                        <SendIconButton loading />
+                        <SendIconButton loading size='md' />
+                        <SendIconButton loading size='lg' />
+                    </div>
                 </div>
             </div>
             <div className="mb-14">
