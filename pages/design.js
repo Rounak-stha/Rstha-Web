@@ -1,6 +1,10 @@
+import { CheckBadge, CrossBadge } from "@/components/AtomsAndMolecules/AllBadges";
+import { EyeIconLabel, ForkIconLabel, StarIconLabel } from "@/components/AtomsAndMolecules/AllIconLabel";
 import Button from "@/components/AtomsAndMolecules/Button";
 import ColorCircle from "@/components/AtomsAndMolecules/ColorCircle";
 import Input from "@/components/AtomsAndMolecules/Input";
+import InputWithOptions from "@/components/AtomsAndMolecules/InputWithOptions";
+import SelectOptions from "@/components/AtomsAndMolecules/SelectOptions";
 import SendIconButton from "@/components/AtomsAndMolecules/SendIconButton";
 import TextArea from "@/components/AtomsAndMolecules/TextArea";
 import Callout from "@/components/MdxComponents/Callout";
@@ -147,11 +151,19 @@ export default function Design() {
                     <Input placeholder='Place Your Text' />
                 </div>
                 <div className="mb-6">
+                    <H4 className='listItem'>Input With Options</H4>
+                    <InputWithOptions name='Type Comedy' options={['Comedy', 'Hilarious', 'Terrific']} />
+                </div>
+                <div className="mb-6">
                     <H4 className='listItem'>Text Area</H4>
                     <TextArea placeholder='Place Your Text' />
                 </div>
+                <div className="mb-6">
+                    <H4 className='listItem'>Select</H4>
+                    <SelectOptions name='Options' options={['Comedy', 'Hilarious', 'Terrific']} />
+                </div>
             </div>
-            <div className="mb-8">
+            <div className="mb-14">
                 <H2 id='inputs'>Buttons</H2>
                 <div className="mb-6">
                     <H4 className='listItem'>Small Button</H4>
@@ -188,6 +200,40 @@ export default function Design() {
                 <div className="mb-6">
                     <H4 className='listItem'>Loading Icon Button</H4>
                     <SendIconButton loading />
+                </div>
+            </div>
+            <div className="mb-14">
+                <H2 id='inputs'>Icon Label</H2>
+                <div className="mb-6">
+                    <H4 className='listItem'>Star Icon Label</H4>
+                    <StarIconLabel number={500} />
+                </div>
+                <div className="mb-6">
+                    <H4 className='listItem'>Eye Icon Label</H4>
+                    <EyeIconLabel numner={4000} />
+                </div>
+                <div className="mb-6">
+                    <H4 className='listItem'>Git Icon Label</H4>
+                    <ForkIconLabel number={300} />
+                </div>
+            </div>
+            <div className="mb-8">
+                <H2 id='inputs'>Badges</H2>
+                <div className="mb-6">
+                    <H4 className='listItem'>Check Badges</H4>
+                    <div className="flex items-center gap-2">
+                        <CheckBadge />
+                        <CheckBadge size='md' />
+                        <CheckBadge size='lg' />
+                    </div>
+                </div>
+                <div className="mb-6">
+                    <H4 className='listItem'>Cross Badges</H4>
+                    <div className="flex items-center gap-2">
+                        <CrossBadge />
+                        <CrossBadge size='md' />
+                        <CrossBadge size='lg' />
+                    </div>
                 </div>
             </div>
         </>
