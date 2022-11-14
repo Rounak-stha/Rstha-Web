@@ -112,7 +112,7 @@ export default function Design() {
                 </div>
                 <div className="mb-6">
                     <H4 className='listItem'>Base Container: Glow on Hover</H4>
-                    <Container outlined glowClass='from-yellow-500 via-pink-500 to-orange-500' className='h-20' />
+                    <Container glowClass='from-yellow-500 via-pink-500 to-orange-500' className='h-20' />
                 </div>
                 <div className="mb-6">
                     <H4 className='listItem'>Outlined Container</H4>
