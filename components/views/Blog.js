@@ -39,6 +39,7 @@ export default function Blog({ blogData }) {
           {created} . {readingTime} min read
         </P3>
         <MDXRemote {...data} components={components} />
+        <p>If found any error or mistake in this blog post, please don't hesitate to <a className='italic font-bold' href='mailto:rsthaofficial@gmail.com'>reach out</a> to me.</p>
         <MsgForm className='not-prose' />
       </article>
     </>
