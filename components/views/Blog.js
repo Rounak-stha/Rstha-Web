@@ -28,10 +28,6 @@ export default function Blog({ blogData }) {
     <>
       <Head>
         <title>{title}</title>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap'
-          rel='stylesheet'
-        />
       </Head>
       <article>
         <H1 className='text-xl sm:text-4xl font-[800] mt-0 mb-2'>{title}</H1>
@@ -39,7 +35,7 @@ export default function Blog({ blogData }) {
           {created} . {readingTime} min read
         </P3>
         <MDXRemote {...data} components={components} />
-        <p>If found any error or mistake in this blog post, please don't hesitate to <a className='italic font-bold' href='mailto:rsthaofficial@gmail.com'>reach out</a> to me.</p>
+        <p>If found any error or mistake in this blog post, please do not hesitate to <a className='italic font-bold' href='mailto:rsthaofficial@gmail.com'>reach out</a> to me.</p>
         <MsgForm className='not-prose' />
       </article>
     </>
