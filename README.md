@@ -1,6 +1,6 @@
 <br />
 <div align="center">
-  <img src="/Logo.png" alt="Logo" width="80" height="80">
+  <img src="public/Logo.png" alt="Logo" width="80" height="80">
 
   <h3 align="center">Rstha Web</h3>
 
@@ -9,9 +9,9 @@
     ·
     <a href="https://rounakstha.me/design">Design System</a>
     ·
-    <a href="https://github.com/Rounak-stha/Github-Search-Simplified/issues">Report Bug</a>
+    <a href="https://github.com/Rounak-stha/Rstha-Web/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Rounak-stha/Github-Search-Simplified/issues">Request Feature</a>
+    <a href="https://github.com/Rounak-stha/Rstha-Web/issues">Request Feature</a>
   </p>
 </div>
 
