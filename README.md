@@ -1,10 +1,8 @@
-# Rstha web. www.rounakstha.me
-
 <br />
 <div align="center">
-  <img src="/public/Logo.png" alt="Logo" width="80" height="80">
+  <img src="/Logo.png" alt="Logo" width="80" height="80">
 
-  <h3 align="center">Github Search Simplified</h3>
+  <h3 align="center">Rstha Web</h3>
 
   <p align="center">
     <a href="https://rounakstha.me">Live</a>
