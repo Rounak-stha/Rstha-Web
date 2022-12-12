@@ -1,4 +1,4 @@
-import { Analytics } from '@vercel/analytics'
+import { Analytics } from '@vercel/analytics/react'
 import { Toaster } from 'react-hot-toast';
 import Layout from '@/components/views/Layout';
 import '../styles/global.css';
