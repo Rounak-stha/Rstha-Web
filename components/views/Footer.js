@@ -12,11 +12,9 @@ export default function Footer() {
       <div className='flex flex-col items-start xs:h-36 flex-wrap w-full mx-auto'>
         {footerItems.map(({ name, href }) => (
           <div key={name}>
-              <Link href={href}>
-              <a className='mr-2 cursor-pointer hover:underline block p-1 sm:px-4 sm:py-1.5'>
+              <a target="_blank" href={href} className='mr-2 cursor-pointer hover:underline block p-1 sm:px-4 sm:py-1.5'>
                 {name}
-              </a>
-            </Link>
+            </a>
           </div>
         ))}
       </div>
