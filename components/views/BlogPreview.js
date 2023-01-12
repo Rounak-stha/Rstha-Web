@@ -19,13 +19,11 @@ export default function BlogPreview({ preViewData }) {
       <div className='hover:scale-105 transition-transform duration-[350ms] ease-in-out cont'>
         <Container outlined glowClass={glowColorClass}>
           <Link href={`/blog/${slug.current}`}>
-              <a>
                 <H4 className={`bg-gradient-to-r ${glowColorClass} !text-transparent bg-clip-text mt-0 mb-1`}>{title}</H4>
                 <P3 className='mb-1'>
                   {created} . {readingTime} min read
                 </P3>
                 <P2>{excerpt}</P2>
-              </a>
             </Link>
         </Container>
       </div>
