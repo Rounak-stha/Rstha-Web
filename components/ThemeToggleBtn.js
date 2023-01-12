@@ -5,8 +5,8 @@ import { IoMoon } from 'react-icons/io5';
 export default function ThemeToggleBtn() {
   const [theme, setTheme] = useState(
     typeof window !== 'undefined'
-      ? localStorage.getItem(theme)
-        ? localStorage.getItem(theme)
+      ? localStorage.getItem('theme')
+        ? localStorage.getItem('theme')
         : 'dark'
       : 'dark'
   );
