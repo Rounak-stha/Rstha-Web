@@ -3,7 +3,7 @@ import { socials } from '../../constants';
 export default function SocialLinks({ center }) {
   return (
     <div
-      className={`flex gap-4 items-center ${center ? 'justify-center' : ''}`}
+      className={`flex gap-4 items-center text-white ${center ? 'justify-center' : ''}`}
     >
       {socials.map(({ name, href, Icon, style }) => (
         <a
