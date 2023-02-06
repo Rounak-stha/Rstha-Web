@@ -2,18 +2,8 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    domains: ['pbs.twimg.com'],
-  },
-  rewrites: async () => [
-    {
-      destination: 'https://cdn.splitbee.io/sb.js',
-      source: '/sb.js'
-    },
-    {
-      destination: 'https://hive.splitbee.io/:slug',
-      source: '/sb-api/:slug'
-    }
-  ]
+    domains: ['pbs.twimg.com', 'cdn.sanity.io'],
+  }
 };
 
 module.exports = nextConfig;

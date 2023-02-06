@@ -14,6 +14,8 @@ body {
     margin: 0;
     font-family: 'Source Sans Pro', sans-serif; /* 'IBM Plex Sans', sans-serif; */
     height: 100vh;
+    transition:  background-color 0.7s ease-out, background-image 0.3s ease-out;
+    -webkit-transition: background-color 0.7s ease-out, background-image 0.3s ease-out;
 }
 
 .listItem {
@@ -33,9 +35,16 @@ a {
 * {
     box-sizing: border-box;
     letter-spacing: 0.05em;
+    transition-duration: 0.3s;
+}
+
+/* Color Transaition */
+/* .clr-transition {
     transition: color 0.3s ease-in-out, box-shadow 0.3s ease-out, background-color 0.7s ease-out, background-image 0.3s ease-out;
     -webkit-transition: color 0.3s ease-in-out, box-shadow 0.3s ease-out, background-color 0.7s ease-out, background-image 0.3s ease-out;
 }
+ */
+
 
 /* Custom ScrollBar */
 
