@@ -1,8 +1,8 @@
-import { getLikedTweets, getTweetAuthor, getTweetMedia, getReferencedTweets } from "@/lib/twitter";
+import { getTweetAuthor, getTweetMedia, getReferencedTweets, getRecentTweets } from "@/lib/twitter";
 
 export default async function(req, res) {
     const formatted_tweets = [] 
-    const tweets = await getLikedTweets()
+    const tweets = await getRecentTweets()
     tweets.data.forEach(tweet => {
         delete tweet.public_metrics.quote_count
         let data = {

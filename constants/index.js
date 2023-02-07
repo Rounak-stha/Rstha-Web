@@ -43,9 +43,10 @@ const navItems = [
     href: '/messages'
   },
   {
-    name: 'More',
-    href: '/more'
+    name: 'About',
+    href: '/about'
   }
 ];
 
 export { socials, navItems };
+export *  from './texts';

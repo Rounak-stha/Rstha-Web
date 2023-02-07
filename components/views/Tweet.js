@@ -87,23 +87,25 @@ export default function Tweet({
         {formattedText}
       </div>
       {media && media.length ? (
-        <div
-          className={
-            media.length === 1
-              ? 'inline-grid grid-cols-1 gap-x-2 gap-y-2 my-2'
-              : 'inline-grid grid-cols-2 gap-x-2 gap-y-2 my-2'
-          }
-        >
-          {media.map((m) => (
-            <Image
-              key={m.media_key}
-              alt={text}
-              height={m.height}
-              width={m.width}
-              src={m.url}
-              className="rounded-md"
-            />
-          ))}
+        <div>
+          <div
+            className={
+              media.length === 1
+                ? 'inline-grid grid-cols-1 gap-x-2 gap-y-2 my-2'
+                : 'inline-grid grid-cols-2 gap-x-2 gap-y-2 my-2'
+            }
+          >
+            {media.map((m) => (
+              <Image
+                key={m.media_key}
+                alt={text}
+                height={m.height}
+                width={m.width}
+                src={m.url || m['preview_image_url']}
+                className="rounded-md"
+              />
+            ))}
+          </div>
         </div>
       ) : null}
       {quoteTweet ? <Tweet {...quoteTweet} /> : null}

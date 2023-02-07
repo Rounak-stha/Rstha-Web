@@ -17,3 +17,11 @@ export const H3 = ({ className, children, ...props }) => (
 export const H4 = ({ className, children, ...props }) => (
     <Base {...props} className={"text-xl " + className}>{ children }</Base>
 )
+
+export const H5 = ({ className, children, ...props }) => (
+    <Base {...props} className={"text-lg " + className}>{ children }</Base>
+)
+
+export const H6 = ({ className, children, ...props }) => (
+    <Base {...props} className={"text-base " + className}>{ children }</Base>
+)
