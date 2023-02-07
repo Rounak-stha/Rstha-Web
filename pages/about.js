@@ -63,7 +63,7 @@ export default function More({ t3Tracks }) {
         <div className='mb-8'>
           <H2>Me</H2>
           {
-            ABOUT_ME.map(text => <H5>{text}</H5>)
+            ABOUT_ME.map((text, i) => <H5 key={i}>{text}</H5>)
           }
         </div>
         <div className='mb-8'>
