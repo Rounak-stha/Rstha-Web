@@ -39,8 +39,8 @@ const navItems = [
     href: '/blog'
   },
   {
-    name: 'Messages',
-    href: '/messages'
+    name: 'Design',
+    href: '/design'
   },
   {
     name: 'About',

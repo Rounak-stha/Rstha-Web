@@ -48,7 +48,7 @@ module.exports = {
       'input-dark-outline': gray[10],
 
       // text color
-      'light': colors.gray['400'],
+      'light': colors.gray['300'],
       'lighter': colors.gray['200'],
 
       'dark': colors.gray[600],
@@ -72,7 +72,7 @@ module.exports = {
           css: {
             '--tw-prose-body': theme('colors.gray[600]'),
             '--tw-prose-headings': '#000',
-            '--tw-prose-invert-body': theme('colors.gray[400]'),
+            '--tw-prose-invert-body': theme('colors.gray[300]'), // text color dark mode
             '--tw-prose-invert-headings': theme('colors.gray[200]'),
             
             a: {
