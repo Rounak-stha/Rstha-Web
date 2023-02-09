@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Profile from '@/components/views/Profile';
-import MsgForm from '@/components/views/MsgForm';
 import { recentPosts } from '@/lib/queries';
 import { getClient } from '@/lib/sanity-server';
 import BlogPreview from '@/components/views/BlogPreview';
@@ -24,9 +23,6 @@ export default function Home({ recentBlogs }) {
               </div>
             );
           })}
-        </div>
-        <div className='w-full mt-12'>
-          <MsgForm />
         </div>
       </main>
     </div>

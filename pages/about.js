@@ -9,9 +9,10 @@ import TweetSkeleton from '@/components/views/TweetSkeleton';
 import useSWR from 'swr';
 import { handleNetworkRequestError } from '@/lib/error';
 import { swrFetcher, swrOptions } from '@/lib/swr';
-import { H2, H3, H4, H5 } from '@/components/Typography/Headings';
+import { H2, H4 } from '@/components/Typography/Headings';
 import { ABOUT_ME, REACH_OUT } from '../constants';
 import SocialLinks from '@/components/views/SocialLinks';
+import { P2 } from '@/components/Typography/ParaGraph';
 
 export default function More({ t3Tracks }) {
   const [tracks, setTracks] = useState(t3Tracks);
@@ -63,17 +64,17 @@ export default function More({ t3Tracks }) {
         <div className='mb-8'>
           <H2>Me</H2>
           {
-            ABOUT_ME.map((text, i) => <H5 key={i}>{text}</H5>)
+            ABOUT_ME.map((text, i) => <P2 key={i}>{text}</P2>)
           }
         </div>
         <div className='mb-8'>
           <H2>Reach Out</H2>
-          <H5>{ REACH_OUT }</H5>
+          <P2 className='mb-4'>{ REACH_OUT }</P2>
           <SocialLinks />
         </div>
         <div className='mb-8'>
           <div className='flex items-center flex-wrap'>
-            <H2 className='mr-2 my-0'>Music</H2>
+            <H2 className='mr-2 !my-0'>Music</H2>
             <CurrentlyPlaying song={currentlyPlaying} />
           </div>
           <H4 className='my-1'>Tracks on Repeat</H4>
@@ -81,7 +82,7 @@ export default function More({ t3Tracks }) {
             return <Track key={track.spotifyId} track={track} />;
           })}
         </div>
-        <div className='mb-2'>
+        <div className='mb-8'>
           { !recentTweetsError && <H2 className='font-semibold'>Recent Tweets</H2> }
           <div className=''>
             {

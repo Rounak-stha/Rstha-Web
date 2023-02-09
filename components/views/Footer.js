@@ -1,9 +1,7 @@
-import Link from 'next/link';
-
 import { navItems, socials } from '../../constants';
 
 const footerItems = navItems
-  .map(({ name, href }) => ({ name, href })).concat([{ name: 'Design', href: '/design'}])
+  .map(({ name, href }) => ({ name, href }))
   .concat(socials.map(({ name, href }) => ({ name, href })));
 
 export default function Footer() {

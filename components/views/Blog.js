@@ -3,7 +3,6 @@ import { MDXRemote } from 'next-mdx-remote';
 import HighLight from '../MdxComponents/HighLight';
 import ImageWithCaption from '../MdxComponents/ImageWithCaption';
 import ImageFlexBox from '../MdxComponents/ImageFlexBox';
-import MsgForm from './MsgForm';
 import Callout from '../MdxComponents/Callout';
 import Math from '../MdxComponents/Math';
 import Caption from '../MdxComponents/Caption';
@@ -16,7 +15,6 @@ const components = {
   HighLight,
   ImageWithCaption,
   ImageFlexBox,
-  MsgForm,
   Callout,
   Math,
   Caption
@@ -35,8 +33,7 @@ export default function Blog({ blogData }) {
           {created} . {readingTime} min read
         </P3>
         <MDXRemote {...data} components={components} />
-        <p>If found any error or mistake in this blog post, please do not hesitate to <a className='italic font-bold' href='mailto:rsthaofficial@gmail.com'>reach out</a> to me.</p>
-        <MsgForm className='not-prose' />
+        <p className='m-0'>If found any error or mistake in this blog post, please do not hesitate to <a className='italic font-bold' href='mailto:rsthaofficial@gmail.com'>reach out</a> to me.</p>
       </article>
     </>
   );
