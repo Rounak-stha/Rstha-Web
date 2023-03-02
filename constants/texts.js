@@ -1,4 +1,4 @@
-export const SHORT_INTRO = 'I am Rounak Shrestha, Full Stack Developer, currently involved in Backend focused work. Write to me or let\'s connect'
+export const SHORT_INTRO = 'I am Rounak Shrestha, Full Stack Developer. Write to me or let\'s connect'
 
 export const ABOUT_ME = [
     `I wanted to start with a joke first but can't think of an original one. Intros talk about who a person is, so who am I? For those
