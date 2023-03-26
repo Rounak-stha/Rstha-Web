@@ -16,10 +16,7 @@ export default function slug({ blogData }) {
                     integrity='sha384-1IGr2Yb8xuHjwTG+WoGjj2+I/a/N6z0gDD5YIGCQxywPROOKc3+orbn/R7arWQxD'
                     crossOrigin='anonymous'
                 />
-                <meta
-                    name='description'
-                    content='Welcome to Rstha web. Visit to know more about Rounak Shrestha | Full Stack Developer'
-                />
+                <meta name='description' content={`${blogData.title}`} />
 
                 <meta property='og:url' content='https://www.rounakstha.me' />
                 <meta property='og:type' content='article' />

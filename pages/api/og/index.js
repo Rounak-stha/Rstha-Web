@@ -48,7 +48,7 @@ export default async function handler(req) {
                     >
                         <p
                             style={{
-                                fontSize: '20px',
+                                fontSize: '30px',
                                 fontWeight: 'bold'
                             }}
                         >
@@ -56,7 +56,7 @@ export default async function handler(req) {
                         </p>
                         <p
                             style={{
-                                fontSize: '36px',
+                                fontSize: '48px',
                                 fontWeight: 'bold',
                                 backgroundImage: 'linear-gradient(to right, #accbeb, #20e3b2, #f64fff)',
                                 backgroundClip: 'text',
@@ -69,7 +69,7 @@ export default async function handler(req) {
                         </p>
                         <p
                             style={{
-                                fontSize: '20px',
+                                fontSize: '30px',
                                 display: 'flex',
                                 style: 'normal'
                             }}
