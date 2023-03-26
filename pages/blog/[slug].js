@@ -18,7 +18,7 @@ export default function slug({ blogData }) {
                 />
                 <meta name='description' content={`${blogData.title}`} />
 
-                <meta property='og:url' content='https://www.rounakstha.me' />
+                <meta property='og:url' content={`https://www.rounakstha.me/blog/${blogData.slug}`} />
                 <meta property='og:type' content='article' />
                 <meta property='og:title' content='Rstha Blog' />
                 <meta property='og:description' content={`${blogData.title}`} />
@@ -54,6 +54,7 @@ export async function getStaticProps({ params, preview = true }) {
         groq`
     *[_type == 'blog' && slug.current == $slug][0] {
         title,
+        'slug': slug.current,
         created,
         data,
         "readingTime": round(length(data) / 7 / 365)
