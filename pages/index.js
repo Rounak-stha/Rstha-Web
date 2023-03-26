@@ -10,13 +10,30 @@ export default function Home({ recentBlogs }) {
         <div>
             <Head>
                 <title>Rstha | Welcome</title>
+
+                <title>Rstha Web</title>
+                <meta
+                    name='description'
+                    content='Welcome to Rstha web. Visit to know more about Rounak Shrestha | Full Stack Developer'
+                />
+
+                <meta property='og:url' content='https://www.rounakstha.me' />
+                <meta property='og:type' content='website' />
                 <meta property='og:title' content='Rstha Web' />
                 <meta
                     property='og:description'
                     content='Welcome to Rstha web. Visit to know more about Rounak Shrestha | Full Stack Developer'
                 />
-                <meta property='og:url' content='https://www.rounakstha.me' />
                 <meta property='og:image' content='/api/og?type=web&title=Welcome to Rstha Web' />
+
+                <meta name='twitter:card' content='summary_large_image' />
+                <meta name='twitter:site' content='@IamRstha' />
+                <meta name='twitter:title' content='Rstha Web' />
+                <meta
+                    name='twitter:description'
+                    content='Welcome to Rstha web. Visit to know more about Rounak Shrestha | Full Stack Developer'
+                />
+                <meta name='twitter:image' content='/api/og?type=web&title=Welcome to Rstha Web' />
             </Head>
 
             <main>
