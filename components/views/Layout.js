@@ -6,8 +6,8 @@ export default function Layout({ children }) {
     useEffect(() => {
         const theme = localStorage.getItem('theme');
         if (theme === 'light') {
-            document.documentElement.classList.remove('dark')
-            document.documentElement.classList.add('light')
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
         }
     }, []);
     return (
