@@ -98,7 +98,10 @@ export default function More({ t3Tracks }) {
                             <div className='flex items-center gap-4'>
                                 <H5>Tech:</H5>
                                 {tech.map((t) => (
-                                    <span className='text-xs px-3 pt-[3px] pb-1 border border-slate-500 rounded-md'>
+                                    <span
+                                        key={t}
+                                        className='text-xs px-3 pt-[3px] pb-1 border border-slate-500 rounded-md'
+                                    >
                                         {t}
                                     </span>
                                 ))}
