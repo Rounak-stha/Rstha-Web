@@ -9,6 +9,7 @@ export default function Layout({ children }) {
             document.documentElement.classList.remove('dark');
             document.documentElement.classList.add('light');
         }
+        // console.log(document.getElementById('__NEXT_DATA__').text);
     }, []);
     return (
         <>

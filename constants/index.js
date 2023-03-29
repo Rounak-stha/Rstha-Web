@@ -71,14 +71,14 @@ export const projects = [
     },
     {
         name: 'API Docs',
-        link: 'api-docs-app.vercel.app/',
+        link: 'https://api-docs-app.vercel.app/',
         about: 'Document your API by writting your API specs in JSON',
         plans: ['Reformat the JSON structure', 'Add a demo page of a demo API'],
         tech: ['React', 'Codemirror']
     },
     {
         name: 'GitHuh Repo Search',
-        link: 'ghub-repo-search.netlify.app/',
+        link: 'https://ghub-repo-search.netlify.app/',
         about: 'Github Repository Search Helper',
         plans: ['NO FUTURE PLANS'],
         tech: ['React']
