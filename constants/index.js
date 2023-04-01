@@ -1,7 +1,7 @@
-import { AiFillGithub } from 'react-icons/ai';
-import { SiGmail } from 'react-icons/si';
-import { IoLogoTwitter } from 'react-icons/io';
-import { FaLinkedin } from 'react-icons/fa';
+import { AiFillGithub } from 'react-icons/ai'
+import { SiGmail } from 'react-icons/si'
+import { IoLogoTwitter } from 'react-icons/io'
+import { FaLinkedin } from 'react-icons/fa'
 
 const socials = [
     {
@@ -28,7 +28,7 @@ const socials = [
         Icon: SiGmail,
         style: { color: '#BB001B' }
     }
-];
+]
 const navItems = [
     {
         name: 'Home',
@@ -46,7 +46,7 @@ const navItems = [
         name: 'About',
         href: '/about'
     }
-];
+]
 
 export const projects = [
     {
@@ -59,6 +59,7 @@ export const projects = [
         name: 'Snote',
         link: 'https://snote-md.vercel.app/',
         about: 'A short note taking app with markdown editor for rich text formatting and elegant note structure with the power of code highlighting',
+        plans: ['Add tag feature to note', 'Add note search and filter capability'],
         tech: ['Nextjs 13 with TypeScript', 'MD-Editor']
     },
     {
@@ -83,6 +84,6 @@ export const projects = [
         plans: ['NO FUTURE PLANS'],
         tech: ['React']
     }
-];
-export { socials, navItems };
-export * from './texts';
+]
+export { socials, navItems }
+export * from './texts'
