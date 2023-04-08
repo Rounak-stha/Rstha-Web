@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
-const colors = require('tailwindcss/colors');
-const { gray, blue, green, yellow, red } = require('./constants/customColors');
+const colors = require('tailwindcss/colors')
+const { gray, blue, green, yellow, red } = require('./constants/customColors')
 
 module.exports = {
     content: ['./pages/**/*.{js, jsx}', './components/**/*.{js, jsx}'],
@@ -11,27 +11,27 @@ module.exports = {
             ...colors,
             gray: {
                 ...colors.gray,
-                ...gray
+                ...gray,
             },
 
             blue: {
                 ...colors.blue,
-                ...blue
+                ...blue,
             },
 
             yellow: {
                 ...colors.yellow,
-                ...yellow
+                ...yellow,
             },
 
             green: {
                 ...colors.green,
-                ...green
+                ...green,
             },
 
             red: {
                 ...colors.red,
-                ...red
+                ...red,
             },
 
             'bg-light': '#DCDCDC',
@@ -56,16 +56,16 @@ module.exports = {
 
             // border
             'bdr-light': gray[0],
-            'bdr-dark': gray[10]
+            'bdr-dark': gray[10],
         },
         extend: {
             screens: {
-                xs: '450px'
+                xs: '450px',
             },
             boxShadow: {
                 'around-sm': '0px 0px 5px 3px rgba(0, 0, 0, 0.1), 0px 0px 4px 1px rgba(0, 0, 0, 0.1)',
                 'around-md': '0px 0px 8px 6px rgba(0, 0, 0, 0.1), 0px 0px 4px 1px rgba(0, 0, 0, 0.1)',
-                'around-lg': '0px 0px 11px 8px rgba(0, 0, 0, 0.1), 0px 0px 4px 1px rgba(0, 0, 0, 0.1)'
+                'around-lg': '0px 0px 11px 8px rgba(0, 0, 0, 0.1), 0px 0px 4px 1px rgba(0, 0, 0, 0.1)',
             },
             typography: (theme) => ({
                 DEFAULT: {
@@ -79,36 +79,36 @@ module.exports = {
                             color: '#62a5f7',
                             textDecoration: 'none',
                             '&:hover': {
-                                textDecoration: 'underline'
-                            }
+                                textDecoration: 'underline',
+                            },
                         },
                         img: {
-                            margin: 0
+                            margin: 0,
                         },
                         figure: {
-                            margin: 0
+                            margin: 0,
                         },
                         hr: {
                             margin: '1.4rem 0',
-                            color: theme('colors.gray-500')
+                            color: theme('colors.gray-500'),
                         },
                         blockquote: {
-                            'border-left-color': theme('colors.zinc.400')
-                        }
-                    }
-                }
+                            'border-left-color': theme('colors.zinc.400'),
+                        },
+                    },
+                },
             }),
             animation: {
-                'bounce-1s': 'bounce-1s 1s'
+                'bounce-1s': 'bounce-1s 1s',
             },
             keyframes: {
                 'bounce-1s': {
                     '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
                     '40%': { transform: 'translateY(-30%)' },
-                    '60%': { transform: 'translateY(-15%)' }
-                }
-            }
-        }
+                    '60%': { transform: 'translateY(-15%)' },
+                },
+            },
+        },
     },
-    plugins: [require('@tailwindcss/typography')]
-};
+    plugins: [require('@tailwindcss/typography')],
+}
