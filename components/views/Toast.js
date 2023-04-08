@@ -1,8 +1,8 @@
 const snacks = {
     message: {
         text: '😎 Thank You for writting 😎',
-        color: 'green'
-    }
+        color: 'green',
+    },
 }
 
 export default function Toast({ type }) {

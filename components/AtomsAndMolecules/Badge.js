@@ -12,10 +12,13 @@ export default function Badge({ size, Icon, colorClass }) {
     }
     return (
         <>
-        <span className={`inline-flex items-center p-[6px] mr-2 text-sm font-semibold rounded-full ${widthAndHeight} ${colorClass ? colorClass : 'bg-gray-700 text-gray-300'}`}>
-            <Icon />
-        </span>
-
+            <span
+                className={`inline-flex items-center p-[6px] mr-2 text-sm font-semibold rounded-full ${widthAndHeight} ${
+                    colorClass ? colorClass : 'bg-gray-700 text-gray-300'
+                }`}
+            >
+                <Icon />
+            </span>
         </>
     )
 }

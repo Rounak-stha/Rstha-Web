@@ -1,29 +1,29 @@
-import { ImageResponse } from '@vercel/og';
+import { ImageResponse } from '@vercel/og'
 // import { NextRequest } from 'next/server';
 
 export const config = {
-    runtime: 'edge'
-};
+    runtime: 'edge',
+}
 
 const openSansRegular = fetch(new URL('../../../public/fonts/OpenSans-Regular.ttf', import.meta.url)).then((res) =>
     res.arrayBuffer()
-);
+)
 const openSansBold = fetch(new URL('../../../public/fonts/OpenSans-Bold.ttf', import.meta.url)).then((res) =>
     res.arrayBuffer()
-);
+)
 
 export default async function handler(req) {
     try {
-        const { searchParams } = new URL(req.url);
+        const { searchParams } = new URL(req.url)
 
-        const regularFont = await openSansRegular;
-        const boldFont = await openSansBold;
+        const regularFont = await openSansRegular
+        const boldFont = await openSansBold
 
         // ?title=<title>
-        const hasTitle = searchParams.has('title');
-        const hasType = searchParams.has('type');
-        const title = hasTitle ? searchParams.get('title')?.slice(0, 100) : 'Welcome to Rstha Web';
-        const type = hasType && searchParams.get('type') === 'blog' ? 'Rstha Blog' : 'Rstha Web';
+        const hasTitle = searchParams.has('title')
+        const hasType = searchParams.has('type')
+        const title = hasTitle ? searchParams.get('title')?.slice(0, 100) : 'Welcome to Rstha Web'
+        const type = hasType && searchParams.get('type') === 'blog' ? 'Rstha Blog' : 'Rstha Web'
 
         return new ImageResponse(
             (
@@ -33,7 +33,7 @@ export default async function handler(req) {
                         height: '100%',
                         width: '100%',
                         display: 'flex',
-                        fontFamily: 'Open Sans'
+                        fontFamily: 'Open Sans',
                     }}
                 >
                     <div
@@ -43,13 +43,13 @@ export default async function handler(req) {
                             justifyContent: 'center',
                             gap: '30px',
                             color: 'white',
-                            margin: '40px'
+                            margin: '40px',
                         }}
                     >
                         <p
                             style={{
                                 fontSize: '30px',
-                                fontWeight: 'bold'
+                                fontWeight: 'bold',
                             }}
                         >
                             {type}
@@ -62,7 +62,7 @@ export default async function handler(req) {
                                 backgroundClip: 'text',
                                 color: 'transparent',
                                 overflowWrap: 'break-word',
-                                wordWrap: 'break-word'
+                                wordWrap: 'break-word',
                             }}
                         >
                             {title}
@@ -71,7 +71,7 @@ export default async function handler(req) {
                             style={{
                                 fontSize: '30px',
                                 display: 'flex',
-                                style: 'normal'
+                                style: 'normal',
                             }}
                         >
                             Rounak Shrestha | Full Stack Developer
@@ -87,21 +87,21 @@ export default async function handler(req) {
                         name: 'Open Sans',
                         data: regularFont,
                         style: 'normal',
-                        weight: 400
+                        weight: 400,
                     },
                     {
                         name: 'Open Sans',
                         data: boldFont,
                         style: 'normal',
-                        weight: 700
-                    }
-                ]
+                        weight: 700,
+                    },
+                ],
             }
-        );
+        )
     } catch (e) {
-        console.log(`${e.message}`);
+        console.log(`${e.message}`)
         return new Response(`Failed to generate the image`, {
-            status: 500
-        });
+            status: 500,
+        })
     }
 }

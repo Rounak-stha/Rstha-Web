@@ -1,6 +1,6 @@
-import colors from "tailwindcss/colors"
+import colors from 'tailwindcss/colors'
 
-export default function Button({ onClick, className, size='sm', outlined = false, disabled = false, children }) {
+export default function Button({ onClick, className, size = 'sm', outlined = false, disabled = false, children }) {
     let padding, fontSize, border, background, text
     switch (size) {
         case 'sm':
@@ -20,25 +20,27 @@ export default function Button({ onClick, className, size='sm', outlined = false
     if (disabled) {
         background = 'dark:bg-gray-8 bg-gray-3'
         text = 'dark:text-gray-12 text-gray-10'
-    }
-
-    else if (outlined) {
+    } else if (outlined) {
         background = 'bg-inherit'
         border = 'border border-emerald-500'
         text = 'text-emerald-500'
-    }
-
-    else {
+    } else {
         background = 'bg-emerald-500'
         text = 'text-white'
     }
-    
+
     return (
         <button
-            onClick={onClick} 
-            type="button" 
-            className={`${padding} ${fontSize} ${background} ${border} ${text} font-semibold ${!disabled && 'hover:shadow-around-md'} ${disabled && 'cursor-not-allowed'} hover:shadow-emerald-500/50 rounded-md ${!disabled && 'active:scale-95'} ${className}`}
-        > { children }
+            onClick={onClick}
+            type="button"
+            className={`${padding} ${fontSize} ${background} ${border} ${text} font-semibold ${
+                !disabled && 'hover:shadow-around-md'
+            } ${disabled && 'cursor-not-allowed'} hover:shadow-emerald-500/50 rounded-md ${
+                !disabled && 'active:scale-95'
+            } ${className}`}
+        >
+            {' '}
+            {children}
         </button>
     )
 }
