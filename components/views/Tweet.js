@@ -13,7 +13,7 @@ export default function Tweet({ text, id, author, media, created_at, public_metr
     const quoteTweet = referenced_tweets && referenced_tweets.find((t) => t.type === 'quoted')
 
     return (
-        <div className="tweet rounded border border-gray-300 dark:border-gray-800 px-6 py-4 my-4 w-full">
+        <div className="rounded border border-gray-300 dark:border-gray-800 px-6 py-4 my-4 w-full">
             <div className="flex items-center">
                 <a className="flex h-12 w-12" href={authorUrl} target="_blank" rel="noopener noreferrer">
                     <Image

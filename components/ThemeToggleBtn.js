@@ -1,4 +1,6 @@
-import { useState, useEffect, useRef } from 'react'
+'use client'
+
+import { useState, useEffect } from 'react'
 import { HiSun } from 'react-icons/hi'
 import { IoMoon } from 'react-icons/io5'
 

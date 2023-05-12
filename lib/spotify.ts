@@ -6,6 +6,14 @@ const access_token_endpoint = 'https://accounts.spotify.com/api/token'
 const currentlyPlayingEndpoint = 'https://api.spotify.com/v1/me/player/currently-playing'
 const tracksEndpoint = 'https://api.spotify.com/v1/tracks'
 
+export type Song = {
+    artist: string
+    name: string
+    spotify_id: string
+    previewURL: string
+    type: string
+}
+
 async function getAccessToken() {
     try {
         const { access_token } = await axios
@@ -13,7 +21,7 @@ async function getAccessToken() {
                 access_token_endpoint,
                 new URLSearchParams({
                     grant_type: 'refresh_token',
-                    refresh_token: SPOTIFY_REFRESH_TOKEN,
+                    refresh_token: SPOTIFY_REFRESH_TOKEN as string,
                 }).toString(),
                 {
                     headers: {
@@ -32,21 +40,25 @@ async function getAccessToken() {
     }
 }
 
-async function getCurrentlyPlaying() {
+async function getCurrentlyPlaying(): Promise<Song | null> {
     try {
         const { access_token, error } = await getAccessToken()
         if (error) return null
-        const currentlyPlaying = await axios
-            .get(currentlyPlayingEndpoint, {
-                headers: {
-                    Authorization: `Bearer ${access_token}`,
-                },
-            })
+
+        const currentlyPlaying: Song | null = await fetch(currentlyPlayingEndpoint, {
+            headers: {
+                Authorization: `Bearer ${access_token}`,
+            },
+        })
             .then((res) => {
-                if (!res.data) return null
-                const { artists, name, preview_url, type } = res.data.item
-                return { artist: artists[0].name, name, preview_url, type }
+                if (res.status !== 200) throw ''
+                return res.json()
             })
+            .then((data) => {
+                const { artists, name, previewURL, type, id: spotify_id } = data.item
+                return { artist: artists[0].name, name, previewURL, type, spotify_id }
+            })
+            .catch(() => null)
         return currentlyPlaying
     } catch (err) {
         console.log(err)

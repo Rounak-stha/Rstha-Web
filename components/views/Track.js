@@ -1,9 +1,11 @@
+'use client'
+
 import { useState, useEffect } from 'react'
 import { RiMusic2Fill } from 'react-icons/ri'
 import { motion } from 'framer-motion'
 
 import PlayingAnimation from './PlayingAnimation'
-import { P2, P3, P4 } from '../Typography/ParaGraph'
+import { P2, P3, P4 } from '../Typography/ParaGraph.tsx'
 
 export default function Track({ track }) {
     const [playing, setPlaying] = useState(false)

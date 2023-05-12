@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { H4 } from '../Typography/Headings'
-import { P2, P3 } from '../Typography/ParaGraph'
+import { P2, P3 } from '../Typography/ParaGraph.tsx'
 import Container from './Container'
 
 const glowColors = [

@@ -1,6 +1,6 @@
 export default function TweetSkeleton() {
     return (
-        <div className="tweet rounded border border-gray-300 dark:border-gray-800 px-6 py-4 my-4 w-full">
+        <div className="rounded border border-gray-300 dark:border-gray-800 px-6 py-4 my-4 w-full">
             <div className="flex items-center">
                 <div className="w-[48px] h-[48px] rounded-full skeleton"></div>
                 <div className="author flex-1 flex flex-col ml-4">
@@ -16,11 +16,8 @@ export default function TweetSkeleton() {
                     </svg>
                 </a>
             </div>
-
             <div className="mt-3 rounded-md skeleton w-full h-16"></div>
-
             <div className="mt-2 rounded-sm w-1/5 h-4 skeleton"></div>
-
             <div className="flex !text-gray-700 dark:!text-gray-300 mt-3">
                 <div className="flex items-center mr-4 !text-gray-500 hover:!text-blue-600 transition hover:!underline">
                     <svg className="mr-2" width="24" height="24" viewBox="0 0 24 24">

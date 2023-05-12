@@ -1,6 +1,6 @@
 import { socials } from '../../constants'
 
-export default function SocialLinks({ center }) {
+export default function SocialLinks({ center }: { center?: boolean }) {
     return (
         <div className={`flex gap-4 items-center text-black dark:text-white ${center ? 'justify-center' : ''}`}>
             {socials.map(({ name, href, Icon, style }) => (

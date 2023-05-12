@@ -1,11 +1,12 @@
+'use client'
+
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import ThemeToggleBtn from '../ThemeToggleBtn'
 import { navItems } from '../../constants'
 
 export default function Nav() {
-    const router = useRouter()
-    const currPath = '/' + router.pathname.split('/')[1].toLowerCase()
+    const currPath = usePathname()
 
     return (
         <div className="flex items-center h-20 py-4">

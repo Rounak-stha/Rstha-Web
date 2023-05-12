@@ -29,6 +29,7 @@ model t3Tracks {
   name String
   artist String
   spotifyId String
+  previewURL String
   roll Int
 }
 

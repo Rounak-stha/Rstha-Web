@@ -5,14 +5,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 .mono {
-    font-family: 'Roboto Mono', monospace;;
+    font-family: 'Roboto Mono', monospace;
 }
 
 html,
 body {
     padding: 0;
     margin: 0;
-    font-family: 'Source Sans Pro', sans-serif; /* 'IBM Plex Sans', sans-serif; */
     height: 100vh;
 }
 
@@ -22,7 +21,7 @@ body {
 }
 
 .listItem::marker {
-    color:hsl(187, 47%, 55%);
+    color: hsl(187, 47%, 55%);
 }
 
 a {
@@ -41,7 +40,6 @@ a {
     -webkit-transition: color 0.3s ease-in-out, box-shadow 0.3s ease-out, background-color 0.7s ease-out, background-image 0.3s ease-out;
 }
  */
-
 
 /* Custom ScrollBar */
 
@@ -97,15 +95,15 @@ a {
 /* Skeleton Animation*/
 .skeleton {
     animation: skeleton-loading 1s linear infinite alternate;
-    background-color: #e5e5e5
+    background-color: #e5e5e5;
 }
-  
+
 @keyframes skeleton-loading {
     0% {
         opacity: 0.9;
     }
     100% {
-      opacity: 0.38;
+        opacity: 0.38;
     }
 }
 
@@ -126,7 +124,7 @@ a {
     left: 50%; /* Center the snackbar */
     bottom: 30px; /* 30px from the bottom */
 }
-  
+
 /* Show the snackbar when clicking on a button (class added with JavaScript) */
 #toast.show {
     visibility: visible; /* Show the snackbar */
@@ -135,26 +133,50 @@ a {
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
-  
+
 /* Animations to fade the snackbar in and out */
 @-webkit-keyframes fadein {
-    from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
 }
 
 @keyframes fadein {
-    from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
 }
 
 @-webkit-keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
-    to {bottom: 0; opacity: 0;}
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
 }
 
 @keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
-    to {bottom: 0; opacity: 0;}
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
 }
 /* Taost End */
 
@@ -264,7 +286,7 @@ pre[class*='language-'] {
     padding: 1em;
     margin: 0 0 0.5em 0;
     overflow: auto;
-    border-radius: 0 0 8px 8px;;
+    border-radius: 0 0 8px 8px;
 }
 
 /* Inline code */
