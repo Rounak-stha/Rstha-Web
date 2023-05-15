@@ -1,6 +1,13 @@
-import colors from 'tailwindcss/colors'
+'use client'
 
-export default function Button({ onClick, className, size = 'sm', outlined = false, disabled = false, children }) {
+export default function Button({
+    onClick = null,
+    className = '',
+    size = 'sm',
+    outlined = false,
+    disabled = false,
+    children,
+}) {
     let padding, fontSize, border, background, text
     switch (size) {
         case 'sm':

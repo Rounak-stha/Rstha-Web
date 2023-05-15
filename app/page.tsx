@@ -4,9 +4,6 @@ import { getClient } from '@/lib/sanity-server'
 import BlogPreview from '@/components/views/BlogPreview'
 import { H2 } from '@/components/Typography/Headings'
 
-const description = 'Welcome to Rstha web. Visit to know more about Rounak Shrestha | Full Stack Developer'
-const ogImage = 'https://rounakstha.me/api/og?type=web&title=Welcome to Rstha Web'
-
 export const metadata = {
     title: 'Rstha | Welcome',
 }

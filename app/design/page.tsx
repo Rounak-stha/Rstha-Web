@@ -13,7 +13,10 @@ import { H1, H2, H3, H4 } from '@/components/Typography/Headings'
 import { P1, P2, P3, P4 } from '@/components/Typography/ParaGraph'
 import ColorPallete from '@/components/views/ColorPallete'
 import Container from '@/components/views/Container'
-import * as customColors from '../constants/customColors'
+import * as customColors from '../../constants/customColors'
+
+const Headings = [H1, H2, H3, H4]
+const Paragraphs = [P1, P2, P3, P4]
 
 export default function Design() {
     return (
@@ -33,9 +36,7 @@ export default function Design() {
             />
 
             <div className="mt-8 mb-14">
-                <H2 id="typography" className="mb-8">
-                    TypoGraphy
-                </H2>
+                <H2 className="mb-8">TypoGraphy</H2>
                 <div id="font-family" className="mb-8">
                     <H3>Font Family</H3>
                     <H4 className="listItem">Source Sans Pro</H4>
@@ -51,42 +52,26 @@ export default function Design() {
                 </div>
                 <div id="headings" className="mb-8">
                     <H3>Headings</H3>
-                    <div className="mb-6">
-                        <H4 className="listItem">H1</H4>
-                        <H1>Tell me something funny now, will you?</H1>
-                    </div>
-                    <div className="mb-6">
-                        <H4 className="listItem">H2</H4>
-                        <H2>Tell me something funny now, will you?</H2>
-                    </div>
-                    <div className="mb-6">
-                        <H4 className="listItem">H3</H4>
-                        <H3>Tell me something funny now, will you?</H3>
-                    </div>
-                    <H4 className="listItem">H4</H4>
-                    <H4>Tell me something funny now, will you?</H4>
+                    {Headings.map((H, i) => (
+                        <div className="mb-6 last:mb-0">
+                            <H4 className="listItem">H{i + 1}</H4>
+                            <H>Tell me something funny now, will you?</H>
+                        </div>
+                    ))}
                 </div>
                 <div id="texts" className="mb-8">
                     <H3>Texts</H3>
-                    <div className="mb-6">
-                        <H4 className="listItem">Text 1</H4>
-                        <P1>Tell me something funny now, will you?</P1>
-                    </div>
-                    <div className="mb-6">
-                        <H4 className="listItem">Text 2</H4>
-                        <P2>Tell me something funny now, will you?</P2>
-                    </div>
-                    <div className="mb-6">
-                        <H4 className="listItem">Text 3</H4>
-                        <P3>Tell me something funny now, will you?</P3>
-                    </div>
-                    <H4 className="listItem">Text 4</H4>
-                    <P4>Tell me something funny now, will you?</P4>
+                    {Paragraphs.map((P, i) => (
+                        <div className="mb-6 last:mb-0">
+                            <H4 className="listItem">Text {i + 1}</H4>
+                            <P>Tell me something funny now, will you?</P>
+                        </div>
+                    ))}
                 </div>
             </div>
 
             <div className="mb-14">
-                <H2 id="colors">Colors</H2>
+                <H2>Colors</H2>
                 <div className="mb-6">
                     <H4 className="listItem">Global Backgrounds</H4>
                     <div className="flex gap-4">
@@ -116,7 +101,7 @@ export default function Design() {
             </div>
 
             <div className="mb-14">
-                <H2 id="container">Container</H2>
+                <H2>Container</H2>
                 <div className="mb-6">
                     <H4 className="listItem">Base Container</H4>
                     <Container className="h-20" />
@@ -136,7 +121,7 @@ export default function Design() {
             </div>
 
             <div className="mb-14">
-                <H2 id="callout">Callout</H2>
+                <H2>Callout</H2>
                 <div className="mb-6">
                     <H4 className="listItem">Info Callout</H4>
                     <Callout type="info">This callout block holds normal information.</Callout>
@@ -156,7 +141,7 @@ export default function Design() {
             </div>
 
             <div className="mb-14">
-                <H2 id="inputs">Inputs</H2>
+                <H2>Inputs</H2>
                 <div className="mb-6">
                     <H4 className="listItem">Normal Text Input</H4>
                     <Input placeholder="Place Your Text" />
@@ -175,7 +160,7 @@ export default function Design() {
                 </div>
             </div>
             <div className="mb-14">
-                <H2 id="inputs">Buttons</H2>
+                <H2>Buttons</H2>
                 <div className="mb-6">
                     <H4 className="listItem">Normal Buttons</H4>
                     <div className="flex items-center gap-3 flex-wrap">
@@ -227,14 +212,14 @@ export default function Design() {
                 </div>
             </div>
             <div className="mb-14">
-                <H2 id="inputs">Icon Label</H2>
+                <H2>Icon Label</H2>
                 <div className="mb-6">
                     <H4 className="listItem">Star Icon Label</H4>
                     <StarIconLabel number={500} />
                 </div>
                 <div className="mb-6">
                     <H4 className="listItem">Eye Icon Label</H4>
-                    <EyeIconLabel numner={4000} />
+                    <EyeIconLabel number={4000} />
                 </div>
                 <div className="mb-6">
                     <H4 className="listItem">Git Icon Label</H4>
@@ -242,7 +227,7 @@ export default function Design() {
                 </div>
             </div>
             <div className="mb-8">
-                <H2 id="inputs">Badges</H2>
+                <H2>Badges</H2>
                 <div className="mb-6">
                     <H4 className="listItem">Check Badges</H4>
                     <div className="flex items-center gap-2">

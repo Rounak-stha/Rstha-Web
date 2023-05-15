@@ -1,4 +1,6 @@
-export default function InputWithOptions({ name, options, disabled, onChange, className }) {
+'use client'
+
+export default function InputWithOptions({ name, options, disabled = false, onChange = null, className = '' }) {
     return (
         <div>
             <input

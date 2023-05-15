@@ -1,6 +1,13 @@
-export default function Badge({ size, Icon, colorClass }) {
+import type { IconType } from 'react-icons/lib'
+
+export type BadgeSize = 'sm' | 'md' | 'lg'
+
+export default function Badge({ size, Icon, colorClass }: { size: BadgeSize; Icon: IconType; colorClass: string }) {
     let widthAndHeight = ''
     switch (size) {
+        case 'md':
+            widthAndHeight = 'w-[22px] h-[22px]'
+            break
         case 'md':
             widthAndHeight = 'w-6 h-6'
             break

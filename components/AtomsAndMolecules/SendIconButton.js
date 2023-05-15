@@ -1,6 +1,8 @@
+'use client'
+
 import { FiSend } from 'react-icons/fi'
 
-export default function SendIconButton({ onClick, loading, size = 'sm', className }) {
+export default function SendIconButton({ onClick = null, loading = false, size = 'sm', className = '' }) {
     let btnSize, iconSize
 
     switch (size) {

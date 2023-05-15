@@ -1,4 +1,5 @@
-export default function SelectOptions({ name, options, disabled, onChange, className }) {
+'use client'
+export default function SelectOptions({ name, options, disabled = false, onChange = null, className = '' }) {
     return (
         <div className="">
             <select

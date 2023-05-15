@@ -1,8 +1,9 @@
 import React from 'react'
 import { AiOutlineInfoCircle, AiOutlineQuestionCircle } from 'react-icons/ai'
+import type { IconType } from 'react-icons/lib'
 import { MdOutlineDangerous } from 'react-icons/md'
 
-const iconType = {
+const iconType: Record<string, { Icon: IconType; text: Capitalize<CalloutType> }> = {
     question: {
         Icon: AiOutlineQuestionCircle,
         text: 'Question',
@@ -21,7 +22,7 @@ const iconType = {
     },
 }
 
-const getContainerClass = (type) => {
+const getContainerClass = (type: CalloutType) => {
     switch (type) {
         case 'info':
             return 'dark:bg-blue-14 dark:border-blue-13 dark:text-blue-1 bg-blue-0 border-blue-1 text-blue-12'
@@ -47,12 +48,20 @@ const getTitleColorClass = (type) => {
     }
 }
 
-export default function Callout({ type = 'info', children, bold }) {
+type CalloutType = 'info' | 'danger' | 'question' | 'warning'
+
+interface Props {
+    type?: CalloutType
+    children: React.ReactNode
+    bold?: boolean
+}
+
+export default function Callout({ type = 'info', children, bold }: Props) {
     const Icon = iconType[type] ? iconType[type].Icon : iconType['info'].Icon
     const containerClass = getContainerClass(type)
     const titleColorClass = getTitleColorClass(type)
 
-    type = iconType[type] ? iconType[type].text : iconType['info'].text
+    const typeForDisplay = iconType[type] ? iconType[type].text : iconType['info'].text
 
     return (
         <div className={`not-prose p-4 px-5 rounded-lg border-2 ${containerClass}`} style={{}}>
@@ -60,7 +69,7 @@ export default function Callout({ type = 'info', children, bold }) {
                 <div className={`mr-[0.6rem]`}>
                     <Icon size={20} />
                 </div>
-                <span className="font-semibold">{type}</span>
+                <span className="font-semibold">{typeForDisplay}</span>
             </div>
             <div className={`text-justify ${bold ? 'font-bold' : ''}`}>{children}</div>
         </div>

@@ -8,7 +8,7 @@ import '@/styles/global.css'
 const sourceSansPro = Source_Sans_Pro({
     subsets: ['latin'],
     style: ['normal', 'italic'],
-    weight: ['300', '400', '700', '900'],
+    weight: ['200', '300', '400', '600', '700', '900'],
 })
 
 const ogDescription = "Welcome to Rounak Shrestha's website. Visit to know more about him and read awesome blogs."

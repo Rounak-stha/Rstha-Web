@@ -1,4 +1,12 @@
-export default function TextArea({ disabled, value, onChange, placeholder, className }) {
+'use client'
+
+export default function TextArea({
+    disabled = false,
+    value = '',
+    onChange = () => {},
+    placeholder = '',
+    className = '',
+}) {
     return (
         <textarea
             disabled={disabled}

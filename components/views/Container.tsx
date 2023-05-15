@@ -1,4 +1,12 @@
-export default function Container({ children, glow, glowClass, outlined = false, className }) {
+interface Props {
+    children?: React.ReactNode
+    glow?: boolean
+    glowClass?: string
+    outlined?: boolean
+    className?: string
+}
+
+export default function Container({ children, glow, glowClass, outlined = false, className }: Props) {
     return (
         <div className={`group relative rounded-md w-full ${className}`}>
             <div

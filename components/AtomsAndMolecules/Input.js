@@ -1,4 +1,9 @@
-export default function Input({ value, onChange, placeholder, disabled = false, className }) {
+// I am skeptical of this pattern of creating a controlled component
+// Is there any other clever way of doing the same thing?
+// Get and Set value from parent
+'use client'
+
+export default function Input({ value = '', onChange = () => {}, placeholder, disabled = false, className = '' }) {
     return (
         <input
             type="text"
