@@ -26,7 +26,7 @@ const t3Tracks = [
     },
 ]
 
-export default async function (req, res) {
+export default async function createTracks(req, res) {
     try {
         await Promise.all(t3Tracks.map((track) => prisma.t3Tracks.create({ data: { ...track } })))
         return res.json({ success: true })

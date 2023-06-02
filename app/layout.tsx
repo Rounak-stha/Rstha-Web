@@ -4,6 +4,7 @@ import Nav from '@/components/views/Nav'
 import Footer from '@/components/views/Footer'
 import Toaster from '@/components/Toaster'
 import '@/styles/global.css'
+import type { Metadata } from 'next'
 
 const sourceSansPro = Source_Sans_Pro({
     subsets: ['latin'],
@@ -14,7 +15,7 @@ const sourceSansPro = Source_Sans_Pro({
 const ogDescription = "Welcome to Rounak Shrestha's website. Visit to know more about him and read awesome blogs."
 const ogImage = 'https://rounakstha.me/api/og?type=web&title=Welcome to Rstha Web'
 
-export const metadata = {
+export const metadata: Metadata = {
     description: "Welcome to Rounak Shrestha's website. Visit to know more about him and read awesome blogs.",
     keywords: ['Rounak Shrestha', 'Rstha', 'Rounak Stha', 'Blog'],
     openGraph: {
@@ -31,14 +32,12 @@ export const metadata = {
         description: ogDescription,
         images: ogImage,
     },
+    icons: [{ rel: 'icon', type: 'image/x-icon', url: '/favicon.png' }],
 }
 
 export default function RootLayout({ children }) {
     return (
         <html className="dark" lang="en">
-            <head>
-                <link rel="icon" type="image/x-icon" href="/favicon.png" />
-            </head>
             <body
                 className={`dark:bg-back-dark bg-back-light text-dark dark:text-light text-[1.07rem] ${sourceSansPro.className}`}
             >
@@ -47,7 +46,7 @@ export default function RootLayout({ children }) {
                 <div className="w-full">
                     <div className="xl:w-[800px] lg:w-2/3 sm:w-4/5 mx-auto pt-4 px-4 sm:px-8">
                         <Nav />
-                        <div className="py-4">{children}</div>
+                        {children}
                         <hr className="max-w-full prose border-[color:var(--tw-prose-hr)] dark:border-[color:var(--tw-prose-invert-hr)] my-3" />
                         <Footer />
                     </div>

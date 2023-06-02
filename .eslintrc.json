@@ -1,6 +1,6 @@
 {
     "extends": "next/core-web-vitals",
     "rules": {
-        "react/no-unknown-property": ["2", { "ignore": ["js", "jsx"] }]
+        "react/no-unknown-property": [2, { "ignore": ["js", "jsx"] }]
     }
 }

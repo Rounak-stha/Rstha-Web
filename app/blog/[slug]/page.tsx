@@ -8,8 +8,10 @@ export async function generateMetadata({ params }): Promise<Metadata> {
     const slug = params.slug
     const res = await fetch(`${APP_URL}/api/blog/${slug}`)
 
-    if (!res.ok) throw 'Can not Load Blog'
-
+    if (!res.ok) {
+        console.log(res.status)
+        throw 'Generate Metadata: Can not Load Blog ' + APP_URL + ' ' + JSON.stringify(res.body)
+    }
     const blogData = await res.json()
     const ogImage = `${APP_URL}/api/og?type=blog&title=${blogData.title}`
 
@@ -34,7 +36,10 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 export default async function BlogPage({ params }) {
     const slug = params.slug
     const res = await fetch(`${APP_URL}/api/blog/${slug}`)
-    if (!res.ok) throw 'Can not Load Blog'
+    if (!res.ok) {
+        console.log(res.status)
+        throw 'BlogPage Component:  Can not Load Blog ' + APP_URL + ' ' + JSON.stringify(res.body)
+    }
     const blogData = await res.json()
 
     return (
@@ -58,7 +63,12 @@ export default async function BlogPage({ params }) {
 
 export async function generateStaticParams() {
     const res = await fetch(`${APP_URL}/api/blog/slugs`)
-    if (!res.ok) throw 'Can not Load Blog'
+    console.log(res)
+    if (!res.ok) {
+        console.log(res.status)
+        console.log(JSON.stringify(res))
+        throw 'Generate Static Params: Can not Load Blog ' + APP_URL + ' '
+    }
     const slugs = await res.json()
     return slugs.map(({ slug }) => {
         return { params: { slug } }

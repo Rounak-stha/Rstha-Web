@@ -1,6 +1,6 @@
 import { getLikedTweets, getTweetAuthor, getTweetMedia, getReferencedTweets } from '@/lib/twitter'
 
-export default async function (req, res) {
+export default async function likedTweets(req, res) {
     const formatted_tweets = []
     const tweets = await getLikedTweets()
     tweets.data.forEach((tweet) => {

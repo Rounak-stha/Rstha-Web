@@ -6,7 +6,7 @@ export default function Profile() {
     return (
         <div>
             <div className="mb-4">
-                <H3 className="mt-0">
+                <H3 className="mt-4">
                     Hey <span className="wave-emoji">👋</span>, {SHORT_INTRO}
                 </H3>
             </div>

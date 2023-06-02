@@ -35,7 +35,7 @@ export default function Projects() {
                             <H5>Future Plans</H5>
                             <div className="ml-6">
                                 {plans.map((p) => (
-                                    <li>{p}</li>
+                                    <li key={p}>{p}</li>
                                 ))}
                             </div>
                         </>
