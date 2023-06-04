@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import { H4 } from '../Typography/Headings'
-import { P2, P3 } from '../Typography/ParaGraph.tsx'
+import { P2, P3 } from '../Typography/ParaGraph'
 import Container from './Container'
+import { BlogPostPreview } from '@/lib/blog'
 
 const glowColors = [
     'from-cyan-500 to-blue-500',
@@ -14,14 +15,14 @@ const glowColors = [
 
 const getRandomGlowColorClass = () => glowColors[Math.floor(glowColors.length * Math.random())]
 
-export default function BlogPreview({ preViewData }) {
-    const { title, slug, excerpt, created, readingTime } = preViewData
+export default function BlogPreview({ previewData }: { previewData: BlogPostPreview }) {
+    const { title, slug, excerpt, created, readingTime } = previewData
     const glowColorClass = getRandomGlowColorClass()
 
     return (
         <div className="hover:scale-105 transition-transform duration-[350ms] ease-in-out cont">
             <Container outlined glowClass={glowColorClass}>
-                <Link href={`/blog/${slug.current}`}>
+                <Link href={`/blog/${slug}`}>
                     <H4 className={`bg-gradient-to-r ${glowColorClass} !text-transparent bg-clip-text mt-0 mb-1`}>
                         {title}
                     </H4>

@@ -1,18 +1,14 @@
 import Blog from '@/components/views/Blog'
 import Head from 'next/head'
 import type { Metadata } from 'next'
+import { getAllSlugs, getBlogData } from '@/lib/blog'
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL
 
 export async function generateMetadata({ params }): Promise<Metadata> {
     const slug = params.slug
-    const res = await fetch(`${APP_URL}/api/blog/${slug}`)
+    const blogData = await getBlogData(slug)
 
-    if (!res.ok) {
-        console.log(res.status)
-        throw 'Generate Metadata: Can not Load Blog ' + APP_URL + ' ' + JSON.stringify(res.body)
-    }
-    const blogData = await res.json()
     const ogImage = `${APP_URL}/api/og?type=blog&title=${blogData.title}`
 
     return {
@@ -35,12 +31,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 
 export default async function BlogPage({ params }) {
     const slug = params.slug
-    const res = await fetch(`${APP_URL}/api/blog/${slug}`)
-    if (!res.ok) {
-        console.log(res.status)
-        throw 'BlogPage Component:  Can not Load Blog ' + APP_URL + ' ' + JSON.stringify(res.body)
-    }
-    const blogData = await res.json()
+    const blogData = await getBlogData(slug)
 
     return (
         <>
@@ -62,15 +53,9 @@ export default async function BlogPage({ params }) {
 }
 
 export async function generateStaticParams() {
-    const res = await fetch(`${APP_URL}/api/blog/slugs`)
-    console.log(res)
-    if (!res.ok) {
-        console.log(res.status)
-        console.log(JSON.stringify(res))
-        throw 'Generate Static Params: Can not Load Blog ' + APP_URL + ' '
-    }
-    const slugs = await res.json()
-    return slugs.map(({ slug }) => {
+    const slugs = await getAllSlugs()
+
+    return slugs.map((slug) => {
         return { params: { slug } }
     })
 }

@@ -1,6 +1,7 @@
 import BlogPreview from '@/components/views/BlogPreview'
 import { H2 } from '@/components/Typography/Headings'
 import type { Metadata } from 'next'
+import { getAllPostsPreview } from '@/lib/blog'
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL
 const ogImage = `${APP_URL}/api/og?type=blog&title=List of all Rstha's Blog`
@@ -23,9 +24,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Blog() {
-    const res = await fetch(`${APP_URL}/api/blogs`)
-    if (!res.ok) throw 'Can not fetch all posts'
-    const allBlogPosts = await res.json()
+    const allBlogPosts = await getAllPostsPreview()
 
     return (
         <>
@@ -34,7 +33,7 @@ export default async function Blog() {
                 {allBlogPosts.map((blog, i) => {
                     return (
                         <div key={i} className="mb-6">
-                            <BlogPreview preViewData={blog} />
+                            <BlogPreview previewData={blog} />
                         </div>
                     )
                 })}

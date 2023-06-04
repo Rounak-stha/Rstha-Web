@@ -19,7 +19,7 @@ export default async function Home() {
                     {recentBlogs.map((blog, i) => {
                         return (
                             <div className="mb-6" key={i}>
-                                <BlogPreview preViewData={blog} />
+                                <BlogPreview previewData={blog} />
                             </div>
                         )
                     })}
