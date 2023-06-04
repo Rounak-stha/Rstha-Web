@@ -6,15 +6,18 @@ import { IoMoon } from 'react-icons/io5'
 
 export default function ThemeToggleBtn() {
     const [theme, setTheme] = useState('dark')
-    const [visible, setVisible] = useState(false)
+
     useEffect(() => {
-        const currTheme = localStorage.getItem('theme')
+        let currTheme = localStorage.getItem('theme')
         if (!currTheme) {
             localStorage.setItem('theme', 'dark')
-            document.documentElement.classList.add('dark')
+            currTheme = 'dark'
         }
-        setTheme(currTheme ? currTheme : 'dark')
-        setVisible(true)
+
+        document.documentElement.className = ''
+        document.documentElement.className = currTheme
+
+        setTheme(currTheme)
     }, [])
 
     function handleChange() {
@@ -27,7 +30,7 @@ export default function ThemeToggleBtn() {
     }
 
     return (
-        <div className={`${!visible && 'hidden'}`}>
+        <div>
             <label>
                 {theme === 'dark' ? <HiSun size={30} fill="#f6f626" /> : <IoMoon size={24} fill="#9a9897" />}
                 <input className="hidden" type="checkbox" onChange={handleChange} />
