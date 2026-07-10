@@ -43,47 +43,35 @@ const navItems = [
         href: '/design',
     },
     {
-        name: 'About',
+        name: 'Work',
         href: '/about',
     },
 ]
 
 export const projects = [
     {
-        name: 'Rstha Web',
-        link: 'https://www.rounakstha.me',
-        about: "Rounak Shrestha's portfolio + blog site",
-        tech: ['Nextjs', 'Tailwind', 'PlanetScale', 'Sanity.io'],
+        name: 'Histui',
+        link: 'https://github.com/Rounak-stha/histui',
+        about: 'A fast CLI for uncovering file coupling, contributor insights, and architectural patterns in Git history.',
+        tech: ['Go', 'TypeScript'],
     },
     {
-        name: 'Snote',
-        link: 'https://snote-md.vercel.app/',
-        about: 'A short note taking app with markdown editor for rich text formatting and elegant note structure with the power of code highlighting',
-        plans: ['Add tag feature to note', 'Add note search and filter capability'],
-        tech: ['Nextjs 13 with TypeScript', 'MD-Editor'],
+        name: 'TS Lox',
+        link: 'https://github.com/Rounak-stha/tslox',
+        about: 'A TypeScript implementation of Lox with custom keywords, including a Nepali-keyword demo.',
+        tech: ['TypeScript', 'Rust'],
     },
     {
-        name: 'MD-Editor',
-        github: 'https://github.com/rounak-stha/markdown-editor',
-        link: 'https://md-editor-web.vercel.app/',
-        about: 'A light package to add markdown powered editor on your web app. Demo can be viewed on the link above with synced MD-HTML parsing. Contributions are highly appreciated',
-        plans: ['Add additional key bindings', 'Make the theme more elegant'],
-        tech: ['Codemirror', 'Unified Ecosystem'],
+        name: 'Bit',
+        link: 'https://github.com/Rounak-stha/bit',
+        about: 'A JavaScript implementation of Git built to explore how Git works internally using a deliberately minimal toolset.',
+        tech: ['JavaScript', 'Node.js'],
     },
     {
-        name: 'API Docs',
-        link: 'https://api-docs-app.vercel.app/',
-        about: 'Document your API by writting your API specs in JSON',
-        plans: ['Reformat the JSON structure', 'Add a demo page of a demo API'],
-        tech: ['React', 'Codemirror'],
-    },
-    {
-        name: 'GitHuh Repo Search',
-        link: 'https://ghub-repo-search.netlify.app/',
-        about: 'Github Repository Search Helper',
-        plans: ['NO FUTURE PLANS'],
-        tech: ['React'],
+        name: 'Pulse',
+        link: 'https://github.com/Rounak-stha/pulse',
+        about: 'A Vendure-based commerce platform extended with shop-level multi-tenancy and a website builder.',
+        tech: ['TypeScript', 'Node.js', 'Vendure'],
     },
 ]
 export { socials, navItems }
-export * from './texts'

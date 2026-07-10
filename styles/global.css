@@ -31,7 +31,7 @@ a {
 
 * {
     box-sizing: border-box;
-    letter-spacing: 0.05em;
+    letter-spacing: normal;
 }
 
 /* Color Transaition */
@@ -219,7 +219,7 @@ a {
 /* Code Title Start */
 
 .rehype-code-title {
-    border: 1px solid #e1e1e8;
+    border: 1px solid #292929;
     border-bottom: none;
     border-radius: 8px 8px 0 0;
     padding: 6px;

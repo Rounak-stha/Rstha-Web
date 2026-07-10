@@ -2,28 +2,29 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import ThemeToggleBtn from '../ThemeToggleBtn'
 import { navItems } from '../../constants'
 
 export default function Nav() {
     const currPath = usePathname()
 
+    const visibleItems = navItems.filter(({ href }) => href !== '/design')
+
     return (
-        <div className="flex items-center h-20 py-4">
-            <div className="flex-1 flex">
-                {navItems.map(({ name, href }) => (
+        <header className="flex items-baseline justify-start gap-4 py-editorial-nav-compact pb-editorial-nav-bottom-compact text-editorial-nav sm:py-editorial-nav sm:pb-editorial-nav-bottom">
+            <nav className="flex flex-wrap items-center gap-3 text-editorial-nav-mobile sm:gap-5 sm:text-editorial-nav" aria-label="Primary navigation">
+                {visibleItems.map(({ name, href }) => (
                     <Link
                         key={name}
                         href={href}
-                        className={`${
-                            href === currPath && 'text-darker dark:text-lighter'
-                        } mr-2 font-semibold cursor-pointer inline-block p-1 sm:px-4 sm:py-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-12 transition-colors`}
+                        aria-current={href === currPath ? 'page' : undefined}
+                        className={`text-editorial-muted transition-colors hover:text-editorial-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-text ${
+                            href === currPath ? 'text-editorial-link underline decoration-1 underline-offset-2' : ''
+                        }`}
                     >
-                        {name}
+                        {name === 'Blog' ? 'Writing' : name}
                     </Link>
                 ))}
-            </div>
-            <ThemeToggleBtn />
-        </div>
+            </nav>
+        </header>
     )
 }

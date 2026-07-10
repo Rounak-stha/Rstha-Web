@@ -1,15 +1,15 @@
 import { Analytics } from '@vercel/analytics/react'
-import { Source_Sans_Pro } from 'next/font/google'
+import { DM_Sans } from 'next/font/google'
 import Nav from '@/components/views/Nav'
 import Footer from '@/components/views/Footer'
 import Toaster from '@/components/Toaster'
 import '@/styles/global.css'
 import type { Metadata } from 'next'
 
-const sourceSansPro = Source_Sans_Pro({
+const dmSans = DM_Sans({
     subsets: ['latin'],
-    style: ['normal', 'italic'],
-    weight: ['200', '300', '400', '600', '700', '900'],
+    weight: ['400', '500', '600'],
+    variable: '--font-sans',
 })
 
 const ogDescription = "Welcome to Rounak Shrestha's website. Visit to know more about him and read awesome blogs."
@@ -37,17 +37,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html className="dark" lang="en">
-            <body
-                className={`dark:bg-back-dark bg-back-light text-dark dark:text-light text-[1.07rem] ${sourceSansPro.className}`}
-            >
+        <html lang="en">
+            <body className={`min-h-screen bg-editorial-canvas text-base leading-editorial text-editorial-text tracking-normal ${dmSans.className} ${dmSans.variable}`}>
                 <Analytics />
                 <Toaster />
-                <div className="w-full">
-                    <div className="xl:w-[800px] lg:w-2/3 sm:w-4/5 mx-auto pt-4 px-4 sm:px-8">
+                <div className="min-h-screen">
+                    <div className="mx-auto max-w-reading px-4 sm:px-5">
                         <Nav />
                         {children}
-                        <hr className="max-w-full prose border-[color:var(--tw-prose-hr)] dark:border-[color:var(--tw-prose-invert-hr)] my-3" />
                         <Footer />
                     </div>
                 </div>

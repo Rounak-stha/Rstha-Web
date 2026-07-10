@@ -10,7 +10,7 @@ interface Props {
 const Base = ({ children, mono, bold = false, semibold = false, italic = false, className }: Props) => (
     <p
         className={
-            `my-[2px] ${mono && 'mono'} ${bold && 'font-bold'} ${semibold && 'font-semibold'} ${italic && 'italic'} ` +
+            `mt-4 text-base leading-copy text-editorial-copy ${mono && 'mono'} ${bold && 'font-bold'} ${semibold && 'font-semibold'} ${italic && 'italic'} ` +
             className
         }
     >
@@ -19,13 +19,13 @@ const Base = ({ children, mono, bold = false, semibold = false, italic = false, 
 )
 
 export const P1 = ({ className, children, ...props }: Props) => (
-    <Base {...props} className={'text-[1.2rem] ' + className}>
+    <Base {...props} className={'text-editorial-lede ' + className}>
         {children}
     </Base>
 )
 
 export const P2 = ({ className, children, ...props }: Props) => (
-    <Base {...props} className={'text-[1.07rem] ' + className}>
+    <Base {...props} className={'text-editorial-body ' + className}>
         {children}
     </Base>
 )

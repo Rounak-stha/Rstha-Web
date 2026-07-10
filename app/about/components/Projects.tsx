@@ -1,47 +1,25 @@
-import { H2, H4, H5 } from '@/components/Typography/Headings'
-import { P2 } from '@/components/Typography/ParaGraph'
 import { projects } from '@/constants/index'
-import { AiFillGithub } from 'react-icons/ai'
 
 export default function Projects() {
     return (
-        <>
+        <div>
             {projects.map(({ name, link, about, tech, github, plans }) => (
-                <div className="my-4" key={name}>
-                    <div className="flex items-center">
-                        <a href={link}>
-                            <H4 className="mr-2 !text-blue-500 hover:underline">{name}</H4>
-                        </a>
+                <article className="border-b border-editorial-rule py-10 first:pt-0 last:border-b-0" key={name}>
+                    <h3 className="m-0 text-editorial-project font-semibold text-editorial-text">
+                        <a className="text-editorial-text underline decoration-editorial-faint decoration-1 underline-offset-2 transition-colors hover:text-editorial-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-text" href={link}>{name}</a>
                         {github && (
-                            <a href={github}>
-                                <span>
-                                    <AiFillGithub />
-                                </span>
+                            <a href={github} className="ml-3 text-editorial-footer font-medium text-editorial-muted transition-colors hover:text-editorial-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-editorial-text">
+                                Repository
                             </a>
                         )}
-                    </div>
-                    <P2>{about}</P2>
-
-                    <div className="flex items-center gap-4">
-                        <H5>Tech:</H5>
-                        {tech.map((t) => (
-                            <span key={t} className="text-xs px-3 pt-[3px] pb-1 border border-slate-500 rounded-md">
-                                {t}
-                            </span>
-                        ))}
-                    </div>
+                    </h3>
+                    <p className="mt-2 text-editorial-copy text-editorial-subtle">{about}</p>
+                    <p className="mt-3 text-editorial-meta font-medium text-editorial-muted">{tech.join(' · ')}</p>
                     {plans && (
-                        <>
-                            <H5>Future Plans</H5>
-                            <div className="ml-6">
-                                {plans.map((p) => (
-                                    <li key={p}>{p}</li>
-                                ))}
-                            </div>
-                        </>
+                        <p className="mt-3 text-editorial-meta font-medium text-editorial-muted">Next: {plans.join(' · ')}</p>
                     )}
-                </div>
+                </article>
             ))}
-        </>
+        </div>
     )
 }

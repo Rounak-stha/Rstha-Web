@@ -44,10 +44,10 @@ export default async function BlogPage({ params }) {
                     crossOrigin="anonymous"
                 />
             </Head>
-            <div className="max-w-full prose dark:prose-invert">
+            <main>
                 {/* @ts-expect-error Server Component */}
                 <Blog blogData={blogData} />
-            </div>
+            </main>
         </>
     )
 }
